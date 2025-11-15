@@ -21,6 +21,8 @@ import DarkModeTwoToneIcon from "@mui/icons-material/DarkModeTwoTone";
 import AspectRatioTwoToneIcon from "@mui/icons-material/AspectRatioTwoTone";
 import CallToActionTwoToneIcon from "@mui/icons-material/CallToActionTwoTone";
 import { BorderOuter } from "@mui/icons-material";
+import InvertColorsTwoToneIcon from "@mui/icons-material/InvertColorsTwoTone";
+import LayersTwoToneIcon from "@mui/icons-material/LayersTwoTone";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
 
 const SidebarWidth = "320px";
@@ -273,8 +275,10 @@ const Customizer: FC = () => {
                 display="flex"
                 gap={1}
               >
-                <CallToActionTwoToneIcon
-                  color={sidebarBackground === "colored" ? "primary" : "inherit"}
+                <InvertColorsTwoToneIcon
+                  color={
+                    sidebarBackground === "colored" ? "primary" : "inherit"
+                  }
                 />
                 Colored
               </StyledBox>
@@ -283,8 +287,10 @@ const Customizer: FC = () => {
                 display="flex"
                 gap={1}
               >
-                <AspectRatioTwoToneIcon
-                  color={sidebarBackground === "integrated" ? "primary" : "inherit"}
+                <LayersTwoToneIcon
+                  color={
+                    sidebarBackground === "integrated" ? "primary" : "inherit"
+                  }
                 />
                 Integrated
               </StyledBox>
