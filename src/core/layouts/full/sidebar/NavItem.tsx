@@ -56,8 +56,8 @@ const NavItem = ({ item, level, pathDirect, hideMenu, onClick }: ItemType) => {
   const ListItemStyled = styled(ListItemButton)(() => ({
     whiteSpace: "nowrap",
     marginBottom: "2px",
-    padding: "8px 10px",
-    borderRadius: "7px",
+    padding: "10px 12px",
+    borderRadius: "9px",
     backgroundColor: level > 1 ? "transparent !important" : "inherit",
     color:
       level > 1 && pathDirect === item?.href
@@ -65,7 +65,9 @@ const NavItem = ({ item, level, pathDirect, hideMenu, onClick }: ItemType) => {
         : isSidebarDark
         ? "#ffffff"
         : theme.palette.text.primary,
-    fontWeight: 600,
+    fontWeight: 700,
+    fontSize: "1rem",
+    letterSpacing: "0.01em",
     paddingLeft: hideMenu ? "10px" : level > 2 ? `${level * 15}px` : "10px",
     "&:hover": {
       backgroundColor: isSidebarDark
@@ -109,7 +111,7 @@ const NavItem = ({ item, level, pathDirect, hideMenu, onClick }: ItemType) => {
       >
         <ListItemIcon
           sx={{
-            minWidth: "36px",
+            minWidth: "30px",
             p: "3px 0",
             color: isSidebarDark
               ? "#ffffff"

@@ -45,7 +45,8 @@ const NavCollapse = ({
   const Icon = menu?.icon;
   const theme = useTheme();
   const { activeMode, sidebarBackground } = useContext(CustomizerContext);
-  const isSidebarDark = activeMode === "dark" || sidebarBackground === "colored";
+  const isSidebarDark =
+    activeMode === "dark" || sidebarBackground === "colored";
   const { pathname } = useLocation();
   const { t } = useTranslation();
   const [open, setOpen] = useState(true);
@@ -72,10 +73,13 @@ const NavCollapse = ({
 
   const ListItemStyled = styled(ListItemButton)(() => ({
     marginBottom: "2px",
-    padding: "8px 10px",
+    padding: "10px 12px",
     paddingLeft: hideMenu ? "10px" : level > 2 ? `${level * 15}px` : "10px",
     backgroundColor: open && level < 2 ? theme.palette.primary.main : "",
     whiteSpace: "nowrap",
+    fontSize: "0.95rem",
+    letterSpacing: "0.01em",
+    borderRadius: "9px",
     "&:hover": {
       backgroundColor:
         pathname.includes(menu.href) || open
@@ -99,7 +103,7 @@ const NavCollapse = ({
         ? "#ffffff"
         : theme.palette.text.primary,
     borderRadius: "7px",
-    fontWeight: 600,
+    fontWeight: 700,
   }));
 
   // If Menu has Children

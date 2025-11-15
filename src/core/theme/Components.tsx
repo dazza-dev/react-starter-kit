@@ -355,7 +355,7 @@ const components: any = (theme: Theme) => {
     MuiChip: {
       styleOverrides: {
         root: {
-          fontWeight: 600,
+          fontWeight: 700,
           fontSize: "0.75rem",
         },
       },
