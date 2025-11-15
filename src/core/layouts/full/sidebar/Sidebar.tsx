@@ -36,6 +36,17 @@ const Sidebar = () => {
     setIsSidebarHover(false);
   };
 
+  // Set sidebar background color
+  const sidebarBgColor =
+    sidebarBackground === "integrated"
+      ? "transparent"
+      : (
+          theme.palette.background as unknown as {
+            sidebar?: string;
+            paper: string;
+          }
+        ).sidebar || theme.palette.background.paper;
+
   if (lgUp) {
     return (
       <Box
@@ -64,10 +75,7 @@ const Sidebar = () => {
                 }),
                 width: toggleWidth,
                 boxSizing: "border-box",
-                backgroundColor:
-                  sidebarBackground === "integrated"
-                    ? theme.palette.background.default
-                    : theme.palette.background.paper,
+                backgroundColor: sidebarBgColor,
               },
             },
           }}
@@ -110,10 +118,7 @@ const Sidebar = () => {
             width: SidebarWidth,
             border: "0 !important",
             boxShadow: (theme) => theme.shadows[8],
-            backgroundColor:
-              sidebarBackground === "integrated"
-                ? theme.palette.background.default
-                : theme.palette.background.paper,
+            backgroundColor: sidebarBgColor,
           },
         },
       }}

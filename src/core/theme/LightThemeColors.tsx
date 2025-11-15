@@ -14,6 +14,9 @@ const LightThemeColors = [
         dark: "#23afdb",
         contrastText: "#ffffff",
       },
+      background: {
+        sidebar: "#ffffff",
+      },
     },
   },
   {
@@ -30,6 +33,9 @@ const LightThemeColors = [
         light: "#EDFBF7",
         dark: "#39C7AD",
         contrastText: "#ffffff",
+      },
+      background: {
+        sidebar: "#ffffff",
       },
     },
   },
@@ -48,6 +54,9 @@ const LightThemeColors = [
         dark: "#8BC8CE",
         contrastText: "#ffffff",
       },
+      background: {
+        sidebar: "#ffffff",
+      },
     },
   },
   {
@@ -64,6 +73,9 @@ const LightThemeColors = [
         light: "#FAFBEF",
         dark: "#C3D046",
         contrastText: "#ffffff",
+      },
+      background: {
+        sidebar: "#ffffff",
       },
     },
   },
@@ -82,6 +94,9 @@ const LightThemeColors = [
         dark: "#F48B6C",
         contrastText: "#ffffff",
       },
+      background: {
+        sidebar: "#ffffff",
+      },
     },
   },
   {
@@ -98,6 +113,9 @@ const LightThemeColors = [
         light: "#EFF9FF",
         dark: "#006FB1",
         contrastText: "#ffffff",
+      },
+      background: {
+        sidebar: "#ffffff",
       },
     },
   },
