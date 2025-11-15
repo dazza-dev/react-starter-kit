@@ -1,4 +1,6 @@
-import { ListSubheader, styled } from "@mui/material";
+import { ListSubheader, styled, useTheme } from "@mui/material";
+import { useContext } from "react";
+import { CustomizerContext } from "@/core/context/CustomizerContext";
 import { IconDots } from "@tabler/icons-react";
 
 type NavGroup = {
@@ -12,6 +14,10 @@ interface ItemType {
 }
 
 const NavGroup = ({ item, hideMenu }: ItemType) => {
+  const theme = useTheme();
+  const { activeMode, sidebarBackground } = useContext(CustomizerContext);
+  const isSidebarDark = activeMode === "dark" || sidebarBackground === "colored";
+
   const ListSubheaderStyle = styled((props: any) => (
     <ListSubheader disableSticky {...props} />
   ))(({ theme }) => ({
@@ -19,7 +25,7 @@ const NavGroup = ({ item, hideMenu }: ItemType) => {
     fontWeight: "700",
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(0),
-    color: "text.Primary",
+    color: isSidebarDark ? "#ffffff" : theme.palette.text.primary,
     lineHeight: "26px",
     padding: "3px 12px",
   }));

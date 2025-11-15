@@ -15,6 +15,7 @@ const Sidebar = () => {
     isMobileSidebar,
     setIsMobileSidebar,
     sidebarBackground,
+    activeMode,
   } = useContext(CustomizerContext);
 
   const MiniSidebarWidth = config.miniSidebarWidth;
@@ -40,6 +41,8 @@ const Sidebar = () => {
   const sidebarBgColor =
     sidebarBackground === "integrated"
       ? "transparent"
+      : activeMode === "light"
+      ? "#000000"
       : (
           theme.palette.background as unknown as {
             sidebar?: string;

@@ -11,6 +11,8 @@ import {
   ListItemButton,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useContext } from "react";
+import { CustomizerContext } from "@/core/context/CustomizerContext";
 
 type NavGroup = {
   [x: string]: any;
@@ -40,6 +42,9 @@ interface ItemType {
 const NavItem = ({ item, level, pathDirect, hideMenu, onClick }: ItemType) => {
   const Icon = item?.icon;
   const theme = useTheme();
+  const { activeMode, sidebarBackground } = useContext(CustomizerContext);
+  const isSidebarDark =
+    activeMode === "dark" || sidebarBackground === "colored";
   const { t } = useTranslation();
   const itemIcon =
     level > 1 ? (
@@ -57,6 +62,8 @@ const NavItem = ({ item, level, pathDirect, hideMenu, onClick }: ItemType) => {
     color:
       level > 1 && pathDirect === item?.href
         ? `${theme.palette.primary.main}!important`
+        : isSidebarDark
+        ? "#ffffff"
         : theme.palette.text.secondary,
     paddingLeft: hideMenu ? "10px" : level > 2 ? `${level * 15}px` : "10px",
     "&:hover": {

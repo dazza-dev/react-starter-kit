@@ -12,6 +12,8 @@ import {
 import NavItem from "./NavItem";
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
+import { useContext } from "react";
+import { CustomizerContext } from "@/core/context/CustomizerContext";
 
 type NavGroupProps = {
   [x: string]: any;
@@ -42,6 +44,8 @@ const NavCollapse = ({
 }: NavCollapseProps) => {
   const Icon = menu?.icon;
   const theme = useTheme();
+  const { activeMode, sidebarBackground } = useContext(CustomizerContext);
+  const isSidebarDark = activeMode === "dark" || sidebarBackground === "colored";
   const { pathname } = useLocation();
   const { t } = useTranslation();
   const [open, setOpen] = useState(true);
@@ -87,6 +91,8 @@ const NavCollapse = ({
         ? "white"
         : level > 1 && open
         ? theme.palette.primary.main
+        : isSidebarDark
+        ? "#ffffff"
         : theme.palette.text.secondary,
     borderRadius: "7px",
   }));
