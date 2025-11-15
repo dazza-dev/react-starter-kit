@@ -8,7 +8,7 @@ import config from "@/core/context/config";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
 
 const Logo: FC = () => {
-  const { isCollapse, isSidebarHover, activeMode } =
+  const { isCollapse, isSidebarHover, activeMode, sidebarBackground } =
     useContext(CustomizerContext);
   const TopBarHeight = config.topBarHeight;
 
@@ -27,7 +27,14 @@ const Logo: FC = () => {
         alignItems: "center",
       }}
     >
-      <img src={activeMode === "dark" ? LogoLight : LogoDark} alt="logo" />
+      <img
+        src={
+          activeMode === "dark" || sidebarBackground === "colored"
+            ? LogoLight
+            : LogoDark
+        }
+        alt="logo"
+      />
     </LinkStyled>
   );
 };
