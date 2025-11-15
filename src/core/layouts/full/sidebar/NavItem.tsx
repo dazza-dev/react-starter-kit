@@ -64,18 +64,25 @@ const NavItem = ({ item, level, pathDirect, hideMenu, onClick }: ItemType) => {
         ? `${theme.palette.primary.main}!important`
         : isSidebarDark
         ? "#ffffff"
-        : theme.palette.text.secondary,
+        : theme.palette.text.primary,
+    fontWeight: 600,
     paddingLeft: hideMenu ? "10px" : level > 2 ? `${level * 15}px` : "10px",
     "&:hover": {
-      backgroundColor: theme.palette.primary.light,
-      color: theme.palette.primary.main,
+      backgroundColor: isSidebarDark
+        ? "rgba(255,255,255,0.08)"
+        : theme.palette.action.hover,
+      color: isSidebarDark ? "#ffffff" : theme.palette.text.primary,
     },
     "&.Mui-selected": {
-      color: "white",
-      backgroundColor: theme.palette.primary.main,
+      color: isSidebarDark ? "#ffffff" : theme.palette.text.primary,
+      backgroundColor: isSidebarDark
+        ? "rgba(255,255,255,0.12)"
+        : theme.palette.action.hover,
       "&:hover": {
-        backgroundColor: theme.palette.primary.main,
-        color: "white",
+        backgroundColor: isSidebarDark
+          ? "rgba(255,255,255,0.12)"
+          : theme.palette.action.hover,
+        color: isSidebarDark ? "#ffffff" : theme.palette.text.primary,
       },
     },
   }));
@@ -104,10 +111,11 @@ const NavItem = ({ item, level, pathDirect, hideMenu, onClick }: ItemType) => {
           sx={{
             minWidth: "36px",
             p: "3px 0",
-            color:
-              level > 1 && pathDirect === item?.href
-                ? `${theme.palette.primary.main}!important`
-                : "inherit",
+            color: isSidebarDark
+              ? "#ffffff"
+              : level > 1 && pathDirect === item?.href
+              ? `${theme.palette.primary.main}!important`
+              : theme.palette.text.primary,
           }}
         >
           {itemIcon}

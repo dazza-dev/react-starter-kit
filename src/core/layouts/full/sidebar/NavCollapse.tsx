@@ -80,11 +80,15 @@ const NavCollapse = ({
       backgroundColor:
         pathname.includes(menu.href) || open
           ? theme.palette.primary.main
-          : theme.palette.primary.light,
+          : isSidebarDark
+          ? "rgba(255,255,255,0.08)"
+          : theme.palette.action.hover,
       color:
         pathname.includes(menu.href) || open
           ? "white"
-          : theme.palette.primary.main,
+          : isSidebarDark
+          ? "#ffffff"
+          : theme.palette.text.primary,
     },
     color:
       open && level < 2
@@ -93,8 +97,9 @@ const NavCollapse = ({
         ? theme.palette.primary.main
         : isSidebarDark
         ? "#ffffff"
-        : theme.palette.text.secondary,
+        : theme.palette.text.primary,
     borderRadius: "7px",
+    fontWeight: 600,
   }));
 
   // If Menu has Children
