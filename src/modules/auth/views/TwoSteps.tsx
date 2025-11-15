@@ -1,10 +1,11 @@
 import { Typography } from "@mui/material";
 import AuthLayout from "@/modules/auth/layouts/AuthLayout";
+import { AUTH_STYLE } from "@/core/context/authConfig";
 import TwoStepsForm from "@/modules/auth/components/TwoStepsForm";
 
 const TwoSteps = () => (
   <AuthLayout
-    type="boxed"
+    type={AUTH_STYLE}
     title="Two Steps"
     description="this is Two Steps page"
   >

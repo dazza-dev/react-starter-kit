@@ -1,10 +1,11 @@
 import { Typography } from "@mui/material";
 import AuthLayout from "@/modules/auth/layouts/AuthLayout";
+import { AUTH_STYLE } from "@/core/context/authConfig";
 import ForgotPasswordForm from "@/modules/auth/components/ForgotPasswordForm";
 
 const ForgotPassword = () => (
   <AuthLayout
-    type="boxed"
+    type={AUTH_STYLE}
     title="Forgot Password"
     description="this is Forgot Password page"
   >

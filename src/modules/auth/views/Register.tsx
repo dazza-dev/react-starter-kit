@@ -1,10 +1,15 @@
 import { Typography, Stack } from "@mui/material";
 import { Link } from "react-router";
 import AuthLayout from "@/modules/auth/layouts/AuthLayout";
+import { AUTH_STYLE } from "@/core/context/authConfig";
 import RegisterForm from "@/modules/auth/components/RegisterForm";
 
 const Register = () => (
-  <AuthLayout type="boxed" title="Register" description="this is Register page">
+  <AuthLayout
+    type={AUTH_STYLE}
+    title="Register"
+    description="this is Register page"
+  >
     <RegisterForm
       subtext={
         <Typography
