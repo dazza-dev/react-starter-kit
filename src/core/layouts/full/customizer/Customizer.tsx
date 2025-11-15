@@ -209,6 +209,36 @@ const Customizer: FC = () => {
               ))}
             </Grid>
             <Box pt={4} />
+            <Typography variant="h6" gutterBottom>
+              Sidebar Background
+            </Typography>
+            <Stack direction={"row"} gap={2} my={2}>
+              <StyledBox
+                onClick={() => setSidebarBackground("colored")}
+                display="flex"
+                gap={1}
+              >
+                <InvertColorsTwoToneIcon
+                  color={
+                    sidebarBackground === "colored" ? "primary" : "inherit"
+                  }
+                />
+                Colored
+              </StyledBox>
+              <StyledBox
+                onClick={() => setSidebarBackground("integrated")}
+                display="flex"
+                gap={1}
+              >
+                <LayersTwoToneIcon
+                  color={
+                    sidebarBackground === "integrated" ? "primary" : "inherit"
+                  }
+                />
+                Integrated
+              </StyledBox>
+            </Stack>
+            <Box pt={4} />
             {/* ------------------------------------------- */}
             {/* ------------ Layout Boxed / Full ------------- */}
             {/* ------------------------------------------- */}
@@ -262,37 +292,6 @@ const Customizer: FC = () => {
                   color={isCardShadow ? "primary" : "inherit"}
                 />
                 Shadow
-              </StyledBox>
-            </Stack>
-
-            <Box pt={4} />
-            <Typography variant="h6" gutterBottom>
-              Sidebar Background
-            </Typography>
-            <Stack direction={"row"} gap={2} my={2}>
-              <StyledBox
-                onClick={() => setSidebarBackground("colored")}
-                display="flex"
-                gap={1}
-              >
-                <InvertColorsTwoToneIcon
-                  color={
-                    sidebarBackground === "colored" ? "primary" : "inherit"
-                  }
-                />
-                Colored
-              </StyledBox>
-              <StyledBox
-                onClick={() => setSidebarBackground("integrated")}
-                display="flex"
-                gap={1}
-              >
-                <LayersTwoToneIcon
-                  color={
-                    sidebarBackground === "integrated" ? "primary" : "inherit"
-                  }
-                />
-                Integrated
               </StyledBox>
             </Stack>
           </Box>

@@ -54,6 +54,9 @@ const envLanguage: Language = (allowedLangs as readonly string[]).includes(
   ? (envLanguageRaw.toLowerCase() as Language)
   : "en";
 
+const envSidebarBackgroundRaw = (import.meta.env.VITE_SIDEBAR_BACKGROUND as string) || "";
+const envSidebarBackground: SidebarBackground = envSidebarBackgroundRaw.toLowerCase() === "integrated" ? "integrated" : "colored";
+
 const config: Config = {
   activeMode: envActiveMode, // This can be light or dark
   activeTheme: envActiveTheme, // BLUE_THEME, GREEN_THEME, AQUA_THEME, PURPLE_THEME, ORANGE_THEME
@@ -66,7 +69,7 @@ const config: Config = {
   sidebarWidth: 270,
   miniSidebarWidth: 87,
   topBarHeight: 70,
-  sidebarBackground: "colored",
+  sidebarBackground: envSidebarBackground,
 };
 
 export default config;
