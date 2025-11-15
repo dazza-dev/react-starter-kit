@@ -35,14 +35,24 @@ interface CustomizerContextProps {
 export const CustomizerContextProvider: React.FC<CustomizerContextProps> = ({
   children,
 }) => {
-  const [activeMode, setActiveMode] = useState<string>(config.activeMode);
-  const [activeTheme, setActiveTheme] = useState<string>(config.activeTheme);
+  const [activeMode, setActiveMode] = useState<string>(() =>
+    localStorage.getItem("activeMode") || config.activeMode
+  );
+  const [activeTheme, setActiveTheme] = useState<string>(() =>
+    localStorage.getItem("activeTheme") || config.activeTheme
+  );
   const [isCardShadow, setIsCardShadow] = useState<boolean>(
     config.isCardShadow
   );
-  const [isLayout, setIsLayout] = useState<string>(config.isLayout);
-  const [isCollapse, setIsCollapse] = useState<string>(config.isCollapse);
-  const [isLanguage, setIsLanguage] = useState<string>(config.isLanguage);
+  const [isLayout, setIsLayout] = useState<string>(() =>
+    localStorage.getItem("isLayout") || config.isLayout
+  );
+  const [isCollapse, setIsCollapse] = useState<string>(() =>
+    localStorage.getItem("isCollapse") || config.isCollapse
+  );
+  const [isLanguage, setIsLanguage] = useState<string>(() =>
+    localStorage.getItem("isLanguage") || config.isLanguage
+  );
   const [isSidebarHover, setIsSidebarHover] = useState<boolean>(false);
   const [isMobileSidebar, setIsMobileSidebar] = useState<boolean>(false);
 
@@ -53,6 +63,14 @@ export const CustomizerContextProvider: React.FC<CustomizerContextProps> = ({
     document.documentElement.setAttribute("data-boxed-layout", isLayout);
     document.documentElement.setAttribute("data-sidebar-type", isCollapse);
   }, [activeMode, activeTheme, isLayout, isCollapse]);
+
+  useEffect(() => {
+    localStorage.setItem("activeMode", activeMode);
+    localStorage.setItem("activeTheme", activeTheme);
+    localStorage.setItem("isLayout", isLayout);
+    localStorage.setItem("isCollapse", isCollapse);
+    localStorage.setItem("isLanguage", isLanguage);
+  }, [activeMode, activeTheme, isLayout, isCollapse, isLanguage]);
 
   return (
     <CustomizerContext.Provider
