@@ -14,6 +14,7 @@ const Sidebar = () => {
     setIsSidebarHover,
     isMobileSidebar,
     setIsMobileSidebar,
+    sidebarBackground,
   } = useContext(CustomizerContext);
 
   const MiniSidebarWidth = config.miniSidebarWidth;
@@ -63,6 +64,10 @@ const Sidebar = () => {
                 }),
                 width: toggleWidth,
                 boxSizing: "border-box",
+                backgroundColor:
+                  sidebarBackground === "integrated"
+                    ? theme.palette.background.default
+                    : theme.palette.background.paper,
               },
             },
           }}
@@ -105,6 +110,10 @@ const Sidebar = () => {
             width: SidebarWidth,
             border: "0 !important",
             boxShadow: (theme) => theme.shadows[8],
+            backgroundColor:
+              sidebarBackground === "integrated"
+                ? theme.palette.background.default
+                : theme.palette.background.paper,
           },
         },
       }}

@@ -19,6 +19,8 @@ interface CustomizerContextState {
   setIsSidebarHover: (isHover: boolean) => void;
   isMobileSidebar: boolean; // Add this
   setIsMobileSidebar: (isMobileSidebar: boolean) => void;
+  sidebarBackground: string;
+  setSidebarBackground: (value: string) => void;
 }
 
 // Create the context with an initial value
@@ -35,23 +37,26 @@ interface CustomizerContextProps {
 export const CustomizerContextProvider: React.FC<CustomizerContextProps> = ({
   children,
 }) => {
-  const [activeMode, setActiveMode] = useState<string>(() =>
-    localStorage.getItem("activeMode") || config.activeMode
+  const [activeMode, setActiveMode] = useState<string>(
+    () => localStorage.getItem("activeMode") || config.activeMode
   );
-  const [activeTheme, setActiveTheme] = useState<string>(() =>
-    localStorage.getItem("activeTheme") || config.activeTheme
+  const [activeTheme, setActiveTheme] = useState<string>(
+    () => localStorage.getItem("activeTheme") || config.activeTheme
   );
   const [isCardShadow, setIsCardShadow] = useState<boolean>(
     config.isCardShadow
   );
-  const [isLayout, setIsLayout] = useState<string>(() =>
-    localStorage.getItem("isLayout") || config.isLayout
+  const [isLayout, setIsLayout] = useState<string>(
+    () => localStorage.getItem("isLayout") || config.isLayout
   );
-  const [isCollapse, setIsCollapse] = useState<string>(() =>
-    localStorage.getItem("isCollapse") || config.isCollapse
+  const [isCollapse, setIsCollapse] = useState<string>(
+    () => localStorage.getItem("isCollapse") || config.isCollapse
   );
-  const [isLanguage, setIsLanguage] = useState<string>(() =>
-    localStorage.getItem("isLanguage") || config.isLanguage
+  const [isLanguage, setIsLanguage] = useState<string>(
+    () => localStorage.getItem("isLanguage") || config.isLanguage
+  );
+  const [sidebarBackground, setSidebarBackground] = useState<string>(
+    () => localStorage.getItem("sidebarBackground") || config.sidebarBackground
   );
   const [isSidebarHover, setIsSidebarHover] = useState<boolean>(false);
   const [isMobileSidebar, setIsMobileSidebar] = useState<boolean>(false);
@@ -70,7 +75,15 @@ export const CustomizerContextProvider: React.FC<CustomizerContextProps> = ({
     localStorage.setItem("isLayout", isLayout);
     localStorage.setItem("isCollapse", isCollapse);
     localStorage.setItem("isLanguage", isLanguage);
-  }, [activeMode, activeTheme, isLayout, isCollapse, isLanguage]);
+    localStorage.setItem("sidebarBackground", sidebarBackground);
+  }, [
+    activeMode,
+    activeTheme,
+    isLayout,
+    isCollapse,
+    isLanguage,
+    sidebarBackground,
+  ]);
 
   return (
     <CustomizerContext.Provider
@@ -91,6 +104,8 @@ export const CustomizerContextProvider: React.FC<CustomizerContextProps> = ({
         setIsSidebarHover,
         isMobileSidebar,
         setIsMobileSidebar,
+        sidebarBackground,
+        setSidebarBackground,
       }}
     >
       {children}

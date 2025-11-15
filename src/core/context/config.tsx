@@ -7,6 +7,7 @@ type Theme =
   | "ORANGE_THEME";
 type Layout = "full" | "boxed";
 type Language = "en" | "es" | "fr" | "pt";
+type SidebarBackground = "colored" | "integrated";
 
 interface Config {
   activeMode: Mode;
@@ -20,6 +21,7 @@ interface Config {
   sidebarWidth: number;
   miniSidebarWidth: number;
   topBarHeight: number;
+  sidebarBackground: SidebarBackground;
 }
 
 const allowedThemes: readonly Theme[] = [
@@ -64,6 +66,7 @@ const config: Config = {
   sidebarWidth: 270,
   miniSidebarWidth: 87,
   topBarHeight: 70,
+  sidebarBackground: "colored",
 };
 
 export default config;

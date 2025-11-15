@@ -41,6 +41,8 @@ const Customizer: FC = () => {
     setIsCardShadow,
     setIsLayout,
     setActiveTheme,
+    sidebarBackground,
+    setSidebarBackground,
   } = useContext(CustomizerContext);
 
   const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({
@@ -258,6 +260,33 @@ const Customizer: FC = () => {
                   color={isCardShadow ? "primary" : "inherit"}
                 />
                 Shadow
+              </StyledBox>
+            </Stack>
+
+            <Box pt={4} />
+            <Typography variant="h6" gutterBottom>
+              Sidebar Background
+            </Typography>
+            <Stack direction={"row"} gap={2} my={2}>
+              <StyledBox
+                onClick={() => setSidebarBackground("colored")}
+                display="flex"
+                gap={1}
+              >
+                <CallToActionTwoToneIcon
+                  color={sidebarBackground === "colored" ? "primary" : "inherit"}
+                />
+                Colored
+              </StyledBox>
+              <StyledBox
+                onClick={() => setSidebarBackground("integrated")}
+                display="flex"
+                gap={1}
+              >
+                <AspectRatioTwoToneIcon
+                  color={sidebarBackground === "integrated" ? "primary" : "inherit"}
+                />
+                Integrated
               </StyledBox>
             </Stack>
           </Box>
