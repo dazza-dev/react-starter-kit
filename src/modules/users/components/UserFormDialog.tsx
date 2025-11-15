@@ -6,23 +6,22 @@ import {
   DialogActions,
   Button,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useCreateUser, useUpdateUser } from "@/modules/users/hooks/useUsers";
 import { useUserStore } from "@/modules/users/store/useUserStore";
 
 export default function UserFormDialog() {
   const { isFormOpen, toggleForm, selectedUser } = useUserStore();
-  const [form, setForm] = useState({ name: "", email: "", role: "" });
+  const [form, setForm] = useState({
+    name: selectedUser?.name ?? "",
+    email: selectedUser?.email ?? "",
+    role: selectedUser?.role ?? "",
+  });
 
   const createUser = useCreateUser();
   const updateUser = useUpdateUser();
 
-  useEffect(() => {
-    if (selectedUser) setForm(selectedUser);
-    else setForm({ name: "", email: "", role: "" });
-  }, [selectedUser]);
-
-  const handleSubmit = () => {
+  const handleSubmit = (): void => {
     if (selectedUser) updateUser.mutate({ ...form, id: selectedUser.id });
     else createUser.mutate(form);
     toggleForm(false);
@@ -39,6 +38,7 @@ export default function UserFormDialog() {
         {selectedUser ? "Editar Usuario" : "Nuevo Usuario"}
       </DialogTitle>
       <DialogContent
+        key={selectedUser ? `edit-${selectedUser.id}` : "new"}
         sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 1 }}
       >
         <TextField

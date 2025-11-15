@@ -5,7 +5,7 @@ import type {
   UpdateUserDTO,
 } from "@/modules/users/types/user";
 
-const API_URL = "https://api.example.com/users";
+const API_URL = "http://localhost:3000/api/v1/users";
 
 export const useUsers = () =>
   useQuery<User[]>({
@@ -13,7 +13,8 @@ export const useUsers = () =>
     queryFn: async () => {
       const res = await fetch(API_URL);
       if (!res.ok) throw new Error("Error fetching users");
-      return res.json();
+      const json = await res.json();
+      return json.data as User[];
     },
   });
 

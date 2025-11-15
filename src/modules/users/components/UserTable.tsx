@@ -1,5 +1,5 @@
 import { DataGrid, GridActionsCellItem } from "@mui/x-data-grid";
-import type { GridColDef } from "@mui/x-data-grid";
+import type { GridColDef, GridRowParams } from "@mui/x-data-grid";
 import { useUsers } from "@/modules/users/hooks/useUsers";
 import { useUserStore } from "@/modules/users/store/useUserStore";
 import EditIcon from "@mui/icons-material/Edit";
@@ -15,13 +15,12 @@ export default function UserTable() {
     { field: "id", headerName: "ID", width: 70 },
     { field: "name", headerName: "Nombre", flex: 1 },
     { field: "email", headerName: "Email", flex: 1 },
-    { field: "role", headerName: "Rol", flex: 1 },
     {
       field: "actions",
       headerName: "Acciones",
       type: "actions",
       width: 120,
-      getActions: (params: any) => [
+      getActions: (params: GridRowParams) => [
         <GridActionsCellItem
           icon={<EditIcon />}
           label="Editar"
