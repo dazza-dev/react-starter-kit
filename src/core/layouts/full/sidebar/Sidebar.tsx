@@ -1,4 +1,6 @@
 import { useMediaQuery, Box, Drawer, useTheme } from "@mui/material";
+import type { FC } from "react";
+import type { Theme } from "@mui/material/styles";
 import SidebarItems from "./SidebarItems";
 import Logo from "@/core/components/Logo";
 import Scrollbar from "@/core/components/Scrollbar";
@@ -6,8 +8,8 @@ import config from "@/core/context/config";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
 import { useContext } from "react";
 
-const Sidebar = () => {
-  const lgUp = useMediaQuery((theme: any) => theme.breakpoints.up("lg"));
+const Sidebar: FC = () => {
+  const lgUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("lg"));
   const {
     isCollapse,
     isSidebarHover,
