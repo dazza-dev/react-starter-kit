@@ -2,20 +2,12 @@ import { ListSubheader, styled } from "@mui/material";
 import { useContext } from "react";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
 import { IconDots } from "@tabler/icons-react";
+import type { NavGroupItemType } from "./sidebar.type";
 
-type NavGroup = {
-  navLabel?: boolean;
-  subheader?: string;
-};
-
-interface ItemType {
-  item: NavGroup;
-  hideMenu: string | boolean;
-}
-
-const NavGroup = ({ item, hideMenu }: ItemType) => {
+const NavGroup = ({ item, hideMenu }: NavGroupItemType) => {
   const { activeMode, sidebarBackground } = useContext(CustomizerContext);
-  const isSidebarDark = activeMode === "dark" || sidebarBackground === "colored";
+  const isSidebarDark =
+    activeMode === "dark" || sidebarBackground === "colored";
 
   const ListSubheaderStyle = styled((props: any) => (
     <ListSubheader disableSticky {...props} />

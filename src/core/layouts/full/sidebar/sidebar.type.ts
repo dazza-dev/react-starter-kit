@@ -15,6 +15,16 @@ export type MenuitemsType = {
   external?: boolean;
 };
 
+export type NavGroup = {
+  navLabel?: boolean;
+  subheader?: string;
+};
+
+export type NavGroupItemType = {
+  item: NavGroup;
+  hideMenu: string | boolean;
+};
+
 export type NavGroupProps = {
   [x: string]: any;
   navLabel?: boolean;
