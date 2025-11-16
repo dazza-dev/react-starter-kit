@@ -20,3 +20,7 @@ export interface NavGroupItemType {
   item: NavGroup;
   hideMenu: string | boolean;
 }
+
+export interface ListSubheaderStyleProps {
+  dark: boolean;
+}

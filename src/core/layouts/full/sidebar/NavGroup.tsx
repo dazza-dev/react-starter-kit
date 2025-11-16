@@ -1,28 +1,37 @@
 import { ListSubheader, styled } from "@mui/material";
-import { useContext } from "react";
+import { useContext, type ReactElement } from "react";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
 import { IconDots } from "@tabler/icons-react";
-import type { NavGroupItemType } from "./sidebar.interface";
+import type {
+  NavGroupItemType,
+  ListSubheaderStyleProps,
+} from "./sidebar.interface";
 
-const NavGroup = ({ item, hideMenu }: NavGroupItemType) => {
+/**
+ * ListSubheaderStyle - Styled component for ListSubheader with dark mode support.
+ */
+const ListSubheaderStyle = styled(ListSubheader, {
+  shouldForwardProp: (prop) => prop !== "dark",
+})<ListSubheaderStyleProps>(({ theme, dark }) => ({
+  ...theme.typography.overline,
+  fontWeight: "700",
+  marginTop: theme.spacing(3),
+  marginBottom: theme.spacing(0),
+  color: dark ? "#ffffff" : theme.palette.text.primary,
+  lineHeight: "26px",
+  padding: "3px 12px",
+}));
+
+/**
+ * NavGroup - Component for rendering a group of navigation items with a subheader.
+ */
+const NavGroup = ({ item, hideMenu }: NavGroupItemType): ReactElement => {
   const { activeMode, sidebarBackground } = useContext(CustomizerContext);
   const isSidebarDark =
     activeMode === "dark" || sidebarBackground === "colored";
 
-  const ListSubheaderStyle = styled((props: any) => (
-    <ListSubheader disableSticky {...props} />
-  ))(({ theme }) => ({
-    ...theme.typography.overline,
-    fontWeight: "700",
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(0),
-    color: isSidebarDark ? "#ffffff" : theme.palette.text.primary,
-    lineHeight: "26px",
-    padding: "3px 12px",
-  }));
-
   return (
-    <ListSubheaderStyle>
+    <ListSubheaderStyle disableSticky dark={isSidebarDark}>
       {hideMenu ? <IconDots size="14" /> : item?.subheader}
     </ListSubheaderStyle>
   );
