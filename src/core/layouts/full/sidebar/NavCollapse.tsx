@@ -33,18 +33,21 @@ const NavCollapse = ({
   const { pathname } = useLocation();
   const { t } = useTranslation();
   const [open, setOpen] = useState(true);
-  const menuIcon =
+
+  // Render Menu Icon
+  const menuIcon = Icon ? (
     level > 1 ? (
       <Icon stroke={1.5} size="1rem" />
     ) : (
       <Icon stroke={1.5} size="1.3rem" />
-    );
+    )
+  ) : null;
 
   const handleClick = () => {
     setOpen(!open);
   };
 
-  // menu collapse for sub-levels
+  // Menu collapse for sub-levels
   React.useEffect(() => {
     setOpen(false);
     menu?.children?.forEach((item: any) => {
@@ -54,6 +57,10 @@ const NavCollapse = ({
     });
   }, [pathname, menu.children]);
 
+  // Check if the current path matches the menu href
+  const isActiveHref = menu?.href ? pathname.includes(menu.href) : false;
+
+  // Styled component for ListItemButton with custom padding and hover effects
   const ListItemStyled = styled(ListItemButton)(() => ({
     marginBottom: "2px",
     padding: "10px 12px",
@@ -65,13 +72,13 @@ const NavCollapse = ({
     borderRadius: "9px",
     "&:hover": {
       backgroundColor:
-        pathname.includes(menu.href) || open
+        isActiveHref || open
           ? theme.palette.primary.main
           : isSidebarDark
           ? "rgba(255,255,255,0.08)"
           : theme.palette.action.hover,
       color:
-        pathname.includes(menu.href) || open
+        isActiveHref || open
           ? "white"
           : isSidebarDark
           ? "#ffffff"
@@ -132,9 +139,7 @@ const NavCollapse = ({
         >
           {menuIcon}
         </ListItemIcon>
-        <ListItemText color="inherit">
-          {hideMenu ? "" : <>{t(`${menu.title}`)}</>}
-        </ListItemText>
+        <ListItemText>{hideMenu ? "" : <>{t(`${menu.title}`)}</>}</ListItemText>
         {!open ? (
           <IconChevronDown size="1rem" />
         ) : (
