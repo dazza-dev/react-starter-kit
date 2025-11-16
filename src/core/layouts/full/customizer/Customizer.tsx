@@ -65,7 +65,7 @@ const Customizer: FC = () => {
   };
 
   /**
-   * theme colors
+   * Theme Colors
    */
   const themeColors: colors[] = [
     {

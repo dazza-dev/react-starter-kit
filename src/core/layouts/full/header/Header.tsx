@@ -8,6 +8,8 @@ import {
   Stack,
 } from "@mui/material";
 import { useContext } from "react";
+import type { FC } from "react";
+import type { Theme } from "@mui/material/styles";
 import { IconMenu2, IconMoon, IconSun } from "@tabler/icons-react";
 import Notifications from "./Notification";
 import Profile from "./Profile";
@@ -16,8 +18,25 @@ import Language from "./Language";
 import config from "@/core/context/config";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
 
-const Header = () => {
-  const lgUp = useMediaQuery((theme: any) => theme.breakpoints.up("lg"));
+const TopBarHeight = config.topBarHeight;
+
+const AppBarStyled = styled(AppBar)(({ theme }) => ({
+  boxShadow: "none",
+  background: theme.palette.background.paper,
+  justifyContent: "center",
+  backdropFilter: "blur(4px)",
+  [theme.breakpoints.up("lg")]: {
+    minHeight: TopBarHeight,
+  },
+}));
+
+const ToolbarStyled = styled(Toolbar)(({ theme }) => ({
+  width: "100%",
+  color: theme.palette.text.secondary,
+}));
+
+const Header: FC = () => {
+  const lgUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("lg"));
 
   const {
     activeMode,
@@ -27,23 +46,6 @@ const Header = () => {
     isMobileSidebar,
     setIsMobileSidebar,
   } = useContext(CustomizerContext);
-
-  const TopBarHeight = config.topBarHeight;
-
-  const AppBarStyled = styled(AppBar)(({ theme }) => ({
-    boxShadow: "none",
-    background: theme.palette.background.paper,
-    justifyContent: "center",
-    backdropFilter: "blur(4px)",
-    [theme.breakpoints.up("lg")]: {
-      minHeight: TopBarHeight,
-    },
-  }));
-
-  const ToolbarStyled = styled(Toolbar)(({ theme }) => ({
-    width: "100%",
-    color: theme.palette.text.secondary,
-  }));
 
   return (
     <AppBarStyled position="sticky" color="default">
@@ -57,12 +59,12 @@ const Header = () => {
           onClick={() => {
             // Toggle sidebar on both mobile and desktop based on screen size
             if (lgUp) {
-              // For large screens, toggle between full-sidebar and mini-sidebar
-              isCollapse === "full-sidebar"
-                ? setIsCollapse("mini-sidebar")
-                : setIsCollapse("full-sidebar");
+              if (isCollapse === "full-sidebar") {
+                setIsCollapse("mini-sidebar");
+              } else {
+                setIsCollapse("full-sidebar");
+              }
             } else {
-              // For smaller screens, toggle mobile sidebar
               setIsMobileSidebar(!isMobileSidebar);
             }
           }}
