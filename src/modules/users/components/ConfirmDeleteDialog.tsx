@@ -1,29 +1,28 @@
-import { Dialog, DialogTitle, DialogActions, Button } from "@mui/material";
 import { useDeleteUser } from "@/modules/users/hooks/useUsers";
 import { useUserStore } from "@/modules/users/store/useUserStore";
+import DeleteConfirmDialog from "@/core/components/DeleteConfirmDialog";
 
-export default function ConfirmDeleteDialog() {
+export default function ConfirmDeleteDialog(): JSX.Element {
   const { isDeleteConfirmOpen, toggleDeleteConfirm, selectedUser } =
     useUserStore();
   const deleteUser = useDeleteUser();
 
-  const handleConfirm = () => {
+  const handleConfirm = (): void => {
     if (selectedUser) deleteUser.mutate(selectedUser.id);
     toggleDeleteConfirm(false);
   };
 
   return (
-    <Dialog
+    <DeleteConfirmDialog
       open={isDeleteConfirmOpen}
       onClose={() => toggleDeleteConfirm(false)}
-    >
-      <DialogTitle>¿Seguro que deseas eliminar este usuario?</DialogTitle>
-      <DialogActions>
-        <Button onClick={() => toggleDeleteConfirm(false)}>Cancelar</Button>
-        <Button color="error" variant="contained" onClick={handleConfirm}>
-          Eliminar
-        </Button>
-      </DialogActions>
-    </Dialog>
+      onConfirm={handleConfirm}
+      title={"¿Seguro que deseas eliminar este usuario?"}
+      description={
+        "Esta acción es irreversible. Todos los datos del usuario serán eliminados permanentemente."
+      }
+      cancelLabel={"No, mantener"}
+      confirmLabel={"Sí, eliminar"}
+    />
   );
 }

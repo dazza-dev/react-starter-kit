@@ -1,14 +1,8 @@
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  TextField,
-  DialogActions,
-  Button,
-} from "@mui/material";
+import { TextField, Button } from "@mui/material";
 import { useState } from "react";
 import { useCreateUser, useUpdateUser } from "@/modules/users/hooks/useUsers";
 import { useUserStore } from "@/modules/users/store/useUserStore";
+import CustomDialog from "@/core/components/CustomDialog";
 
 export default function UserFormDialog() {
   const { isFormOpen, toggleForm, selectedUser } = useUserStore();
@@ -28,41 +22,35 @@ export default function UserFormDialog() {
   };
 
   return (
-    <Dialog
+    <CustomDialog
+      key={selectedUser ? `edit-${selectedUser.id}` : "new"}
       open={isFormOpen}
       onClose={() => toggleForm(false)}
-      fullWidth
-      maxWidth="sm"
+      title={selectedUser ? "Editar Usuario" : "Nuevo Usuario"}
+      actions={
+        <>
+          <Button onClick={() => toggleForm(false)}>Cancelar</Button>
+          <Button variant="contained" onClick={handleSubmit}>
+            {selectedUser ? "Actualizar" : "Crear"}
+          </Button>
+        </>
+      }
     >
-      <DialogTitle>
-        {selectedUser ? "Editar Usuario" : "Nuevo Usuario"}
-      </DialogTitle>
-      <DialogContent
-        key={selectedUser ? `edit-${selectedUser.id}` : "new"}
-        sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 1 }}
-      >
-        <TextField
-          label="Nombre"
-          value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
-        />
-        <TextField
-          label="Email"
-          value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
-        />
-        <TextField
-          label="Rol"
-          value={form.role}
-          onChange={(e) => setForm({ ...form, role: e.target.value })}
-        />
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={() => toggleForm(false)}>Cancelar</Button>
-        <Button variant="contained" onClick={handleSubmit}>
-          {selectedUser ? "Actualizar" : "Crear"}
-        </Button>
-      </DialogActions>
-    </Dialog>
+      <TextField
+        label="Nombre"
+        value={form.name}
+        onChange={(e) => setForm({ ...form, name: e.target.value })}
+      />
+      <TextField
+        label="Email"
+        value={form.email}
+        onChange={(e) => setForm({ ...form, email: e.target.value })}
+      />
+      <TextField
+        label="Rol"
+        value={form.role}
+        onChange={(e) => setForm({ ...form, role: e.target.value })}
+      />
+    </CustomDialog>
   );
 }
