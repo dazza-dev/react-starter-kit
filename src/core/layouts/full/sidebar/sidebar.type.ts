@@ -6,31 +6,23 @@ export type NavGroup = {
 };
 
 export type NavItemCommonType = NavGroup & {
+  [x: string]: any;
+  id?: string;
   title?: string;
+  icon?: any;
+  href?: string;
+  chip?: string;
+  chipColor?: string;
+  variant?: string | any;
+  external?: boolean;
 };
 
 export type MenuitemsType = NavItemCommonType & {
-  [x: string]: any;
-  id?: string;
-  icon?: any;
-  href?: string;
   children?: MenuitemsType[];
-  chip?: string;
-  chipColor?: string;
-  variant?: string;
-  external?: boolean;
 };
 
 export type NavGroupItem = NavItemCommonType & {
-  [x: string]: any;
-  id?: string;
-  icon?: any;
-  href?: string;
   children?: NavGroup[];
-  chip?: string;
-  chipColor?: any;
-  variant?: string | any;
-  external?: boolean;
   level?: number;
   onClick?: React.MouseEvent<HTMLButtonElement, MouseEvent>;
 };
