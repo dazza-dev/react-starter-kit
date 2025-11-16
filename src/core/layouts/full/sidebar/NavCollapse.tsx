@@ -14,7 +14,7 @@ import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
 import { useContext } from "react";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
-import { NavCollapseProps } from "./sidebar.interface";
+import type { NavCollapseProps } from "./sidebar.interface";
 
 // FC Component For Dropdown Menu
 const NavCollapse = ({

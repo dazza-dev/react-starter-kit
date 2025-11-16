@@ -2,7 +2,7 @@ import { ListSubheader, styled } from "@mui/material";
 import { useContext } from "react";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
 import { IconDots } from "@tabler/icons-react";
-import { NavGroupItemType } from "./sidebar.interface";
+import type { NavGroupItemType } from "./sidebar.interface";
 
 const NavGroup = ({ item, hideMenu }: NavGroupItemType) => {
   const { activeMode, sidebarBackground } = useContext(CustomizerContext);
