@@ -1,5 +1,5 @@
 const typography: any = {
-  fontFamily: "'Plus Jakarta Sans', sans-serif;",
+  fontFamily: "'Geist', sans-serif;",
   h1: {
     fontWeight: 600,
     fontSize: "2.25rem",
