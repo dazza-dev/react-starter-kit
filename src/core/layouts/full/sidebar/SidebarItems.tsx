@@ -33,7 +33,6 @@ const SidebarItems: FC = () => {
             );
 
             // {/********If Sub Menu**********/}
-            /* eslint no-else-return: "off" */
           } else if (item.children) {
             return (
               <NavCollapse
