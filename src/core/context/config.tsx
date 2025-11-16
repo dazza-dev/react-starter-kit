@@ -79,9 +79,9 @@ const config: Config = {
   isLanguage: envLanguage,
   isCardShadow: true,
   isMobileSidebar: false,
-  sidebarWidth: 270,
-  miniSidebarWidth: 87,
-  topBarHeight: 70,
+  sidebarWidth: 250,
+  miniSidebarWidth: 90,
+  topBarHeight: 50,
   sidebarBackground: envSidebarBackground,
 };
 
