@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next";
 import { useContext } from "react";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
 import type { NavCollapseProps } from "./sidebar.interface";
+import type { MenuitemsType } from "./sidebar.type";
 
 // FC Component For Dropdown Menu
 const NavCollapse = ({
@@ -49,7 +50,7 @@ const NavCollapse = ({
   // Menu collapse for sub-levels
   React.useEffect(() => {
     setOpen(false);
-    menu?.children?.forEach((item: any) => {
+    menu?.children?.forEach((item: MenuitemsType) => {
       if (item?.href === pathname) {
         setOpen(true);
       }
@@ -94,7 +95,7 @@ const NavCollapse = ({
   } as const;
 
   // If Menu has Children
-  const submenus = menu.children?.map((item: any) => {
+  const submenus = menu.children?.map((item: MenuitemsType) => {
     if (item.children) {
       return (
         <NavCollapse

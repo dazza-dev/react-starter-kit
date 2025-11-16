@@ -77,14 +77,22 @@ const NavItem = ({
     "success",
     "warning",
   ] as const;
-  const chipColor = chipColorOptions.includes(item?.chipColor as any)
-    ? (item?.chipColor as (typeof chipColorOptions)[number])
-    : "default";
+  const chipColor =
+    typeof item?.chipColor === "string" &&
+    chipColorOptions.includes(
+      item?.chipColor as (typeof chipColorOptions)[number]
+    )
+      ? (item?.chipColor as (typeof chipColorOptions)[number])
+      : "default";
 
   const chipVariantOptions = ["filled", "outlined"] as const;
-  const chipVariant = chipVariantOptions.includes(item?.variant as any)
-    ? (item?.variant as (typeof chipVariantOptions)[number])
-    : "filled";
+  const chipVariant =
+    typeof item?.variant === "string" &&
+    chipVariantOptions.includes(
+      item?.variant as (typeof chipVariantOptions)[number]
+    )
+      ? (item?.variant as (typeof chipVariantOptions)[number])
+      : "filled";
 
   return (
     <List component="li" disablePadding key={item?.id && item.title}>
