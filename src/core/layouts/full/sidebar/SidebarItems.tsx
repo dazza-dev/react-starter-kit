@@ -2,12 +2,14 @@ import { useContext } from "react";
 import Menuitems from "./MenuItems";
 import { useLocation } from "react-router";
 import { Box, List, useMediaQuery } from "@mui/material";
+import type { FC } from "react";
+import type { Theme } from "@mui/material/styles";
 import NavItem from "./NavItem";
 import NavCollapse from "./NavCollapse";
 import NavGroup from "./NavGroup";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
 
-const SidebarItems = () => {
+const SidebarItems: FC = () => {
   const { pathname } = useLocation();
   const pathDirect = pathname;
   const pathWithoutLastPart = pathname.slice(0, pathname.lastIndexOf("/"));
@@ -15,10 +17,10 @@ const SidebarItems = () => {
   const { isSidebarHover, isCollapse, isMobileSidebar, setIsMobileSidebar } =
     useContext(CustomizerContext);
 
-  const lgUp = useMediaQuery((theme: any) => theme.breakpoints.up("lg"));
-  const hideMenu: any = lgUp
-    ? isCollapse == "mini-sidebar" && !isSidebarHover
-    : "";
+  const lgUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("lg"));
+  const hideMenu: boolean = lgUp
+    ? isCollapse === "mini-sidebar" && !isSidebarHover
+    : false;
 
   return (
     <Box sx={{ px: 3 }}>

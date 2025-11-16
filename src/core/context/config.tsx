@@ -32,20 +32,27 @@ const allowedThemes: readonly Theme[] = [
   "ORANGE_THEME",
 ] as const;
 
+// Active Mode
 const envActiveMode: Mode =
   ((import.meta.env.VITE_ACTIVE_MODE as string) || "light").toLowerCase() ===
   "dark"
     ? "dark"
     : "light";
+
+// Theme
 const envActiveThemeRaw = (import.meta.env.VITE_ACTIVE_THEME as string) || "";
 const envActiveTheme: Theme = (allowedThemes as readonly string[]).includes(
   envActiveThemeRaw.toUpperCase()
 )
   ? (envActiveThemeRaw.toUpperCase() as Theme)
   : "BLUE_THEME";
+
+// Layout
 const envLayoutRaw = (import.meta.env.VITE_LAYOUT as string) || "";
 const envLayout: Layout =
   envLayoutRaw.toLowerCase() === "full" ? "full" : "boxed";
+
+// Language
 const allowedLangs: readonly Language[] = ["en", "es", "fr", "pt"] as const;
 const envLanguageRaw = (import.meta.env.VITE_LANGUAGE as string) || "";
 const envLanguage: Language = (allowedLangs as readonly string[]).includes(
@@ -54,13 +61,19 @@ const envLanguage: Language = (allowedLangs as readonly string[]).includes(
   ? (envLanguageRaw.toLowerCase() as Language)
   : "en";
 
-const envSidebarBackgroundRaw = (import.meta.env.VITE_SIDEBAR_BACKGROUND as string) || "";
-const envSidebarBackground: SidebarBackground = envSidebarBackgroundRaw.toLowerCase() === "integrated" ? "integrated" : "colored";
+// Sidebar Background
+const envSidebarBackgroundRaw =
+  (import.meta.env.VITE_SIDEBAR_BACKGROUND as string) || "";
+const envSidebarBackground: SidebarBackground =
+  envSidebarBackgroundRaw.toLowerCase() === "integrated"
+    ? "integrated"
+    : "colored";
 
+// Customizer
 const config: Config = {
-  activeMode: envActiveMode, // This can be light or dark
-  activeTheme: envActiveTheme, // BLUE_THEME, GREEN_THEME, AQUA_THEME, PURPLE_THEME, ORANGE_THEME
-  isLayout: envLayout, // This can be full or boxed
+  activeMode: envActiveMode,
+  activeTheme: envActiveTheme,
+  isLayout: envLayout,
   isSidebarHover: false,
   isCollapse: "full-sidebar",
   isLanguage: envLanguage,
