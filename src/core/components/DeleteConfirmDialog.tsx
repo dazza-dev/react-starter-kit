@@ -7,6 +7,7 @@ import {
   Alert,
   AlertTitle,
   Typography,
+  type DialogProps,
 } from "@mui/material";
 import WarningAmberRoundedIcon from "@mui/icons-material/WarningAmberRounded";
 import type { ReactNode } from "react";
@@ -20,6 +21,8 @@ type DeleteConfirmDialogProps = {
   confirmLabel?: string;
   cancelLabel?: string;
   confirming?: boolean;
+  maxWidth?: DialogProps["maxWidth"];
+  fullWidth?: boolean;
 };
 
 export default function DeleteConfirmDialog({
@@ -31,9 +34,11 @@ export default function DeleteConfirmDialog({
   confirmLabel = "Yes, delete",
   cancelLabel = "No, keep it",
   confirming = false,
+  maxWidth = "xs",
+  fullWidth = true,
 }: DeleteConfirmDialogProps): JSX.Element {
   return (
-    <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
+    <Dialog open={open} onClose={onClose} fullWidth={fullWidth} maxWidth={maxWidth}>
       <DialogTitle>{title}</DialogTitle>
       {description ? (
         <DialogContent sx={{ mt: 1 }}>
