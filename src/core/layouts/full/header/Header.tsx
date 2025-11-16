@@ -18,7 +18,6 @@ import { CustomizerContext } from "@/core/context/CustomizerContext";
 
 const Header = () => {
   const lgUp = useMediaQuery((theme: any) => theme.breakpoints.up("lg"));
-  // const lgDown = useMediaQuery((theme: any) => theme.breakpoints.down("lg"));
   const {
     activeMode,
     setActiveMode,
