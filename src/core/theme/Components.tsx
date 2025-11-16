@@ -1,7 +1,7 @@
 import "./DefaultColors";
 import type { Theme } from "@mui/material/styles";
 
-const components: any = (theme: Theme) => {
+const components = (theme: Theme): Record<string, unknown> => {
   return {
     MuiCssBaseline: {
       styleOverrides: {
@@ -19,7 +19,7 @@ const components: any = (theme: Theme) => {
           height: "100%",
           margin: 0,
           padding: 0,
-          backgroundColor: (theme as any).palette.background.default,
+          backgroundColor: theme.palette.background.default,
         },
         "#root": {
           height: "100%",

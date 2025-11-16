@@ -18,7 +18,6 @@ const Menuitems: MenuitemsType[] = [
     navLabel: true,
     subheader: "Home",
   },
-
   {
     id: uniqueId(),
     title: "Sample Page",

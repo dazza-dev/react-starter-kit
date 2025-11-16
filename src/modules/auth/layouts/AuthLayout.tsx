@@ -1,11 +1,12 @@
 import AuthLayoutBoxed from "@/modules/auth/layouts/AuthLayoutBoxed";
 import AuthLayoutSide from "@/modules/auth/layouts/AuthLayoutSide";
+import type { ReactNode } from "react";
 
 type Props = {
   type: "boxed" | "side";
   title?: string;
   description?: string;
-  children: any | any[];
+  children: ReactNode;
 };
 
 const AuthLayout = ({ type, title, description, children }: Props) =>

@@ -2,11 +2,12 @@ import { Grid, Box } from "@mui/material";
 import Logo from "@/core/components/Logo";
 import PageContainer from "@/core/components/PageContainer";
 import loginBg from "@/assets/images/backgrounds/login-bg.svg";
+import type { ReactNode } from "react";
 
 type Props = {
   title?: string;
   description?: string;
-  children: any | any[];
+  children: ReactNode;
 };
 
 const AuthLayoutSide = ({ title, description, children }: Props) => (

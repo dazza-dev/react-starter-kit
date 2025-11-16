@@ -10,7 +10,7 @@ import { baseDarkTheme, baseLightTheme } from "./DefaultColors";
 import * as locales from "@mui/material/locale";
 import { CustomizerContext } from "../context/CustomizerContext";
 
-export const BuildTheme = (config: any = {}) => {
+export const BuildTheme = (config: { theme?: string } = {}) => {
   const themeOptions = LightThemeColors.find(
     (theme) => theme.name === config.theme
   );
@@ -37,7 +37,7 @@ export const BuildTheme = (config: any = {}) => {
   const theme = createTheme(
     _.merge({}, baseMode, defaultTheme, locales, themeSelect)
   );
-  theme.components = components(theme);
+  theme.components = components(theme) as unknown as typeof theme.components;
 
   return theme;
 };

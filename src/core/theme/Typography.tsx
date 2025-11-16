@@ -1,4 +1,6 @@
-const typography: any = {
+import type { ThemeOptions } from "@mui/material/styles";
+
+const typography: ThemeOptions["typography"] = {
   fontFamily: "'Geist', sans-serif;",
   h1: {
     fontWeight: 600,

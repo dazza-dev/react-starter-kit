@@ -1,11 +1,12 @@
 import { Grid, Box, Card } from "@mui/material";
 import Logo from "@/core/components/Logo";
 import PageContainer from "@/core/components/PageContainer";
+import type { ReactNode } from "react";
 
 type Props = {
   title?: string;
   description?: string;
-  children: any | any[];
+  children: ReactNode;
 };
 
 const AuthLayoutBoxed = ({ title, description, children }: Props) => (
