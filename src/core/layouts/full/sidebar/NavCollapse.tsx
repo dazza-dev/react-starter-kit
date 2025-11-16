@@ -5,7 +5,6 @@ import {
   ListItemIcon,
   ListItemButton,
   Collapse,
-  styled,
   ListItemText,
   useTheme,
 } from "@mui/material";
@@ -60,8 +59,7 @@ const NavCollapse = ({
   // Check if the current path matches the menu href
   const isActiveHref = menu?.href ? pathname.includes(menu.href) : false;
 
-  // Styled component for ListItemButton with custom padding and hover effects
-  const ListItemStyled = styled(ListItemButton)(() => ({
+  const listItemSx = {
     marginBottom: "2px",
     padding: "10px 12px",
     paddingLeft: hideMenu ? "10px" : level > 2 ? `${level * 15}px` : "10px",
@@ -93,7 +91,7 @@ const NavCollapse = ({
         ? "#ffffff"
         : theme.palette.text.primary,
     fontWeight: 700,
-  }));
+  } as const;
 
   // If Menu has Children
   const submenus = menu.children?.map((item: any) => {
@@ -125,7 +123,8 @@ const NavCollapse = ({
 
   return (
     <>
-      <ListItemStyled
+      <ListItemButton
+        sx={listItemSx}
         onClick={handleClick}
         selected={pathWithoutLastPart === menu.href}
         key={menu?.id}
@@ -145,7 +144,7 @@ const NavCollapse = ({
         ) : (
           <IconChevronUp size="1rem" />
         )}
-      </ListItemStyled>
+      </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         {submenus}
       </Collapse>

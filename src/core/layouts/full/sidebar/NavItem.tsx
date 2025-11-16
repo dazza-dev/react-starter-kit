@@ -2,7 +2,6 @@ import { NavLink } from "react-router";
 import {
   ListItemIcon,
   List,
-  styled,
   ListItemText,
   Chip,
   useTheme,
@@ -27,14 +26,13 @@ const NavItem = ({
   const isSidebarDark =
     activeMode === "dark" || sidebarBackground === "colored";
   const { t } = useTranslation();
-  const itemIcon =
-    level > 1 ? (
-      <Icon stroke={1.5} size="1rem" />
-    ) : (
-      <Icon stroke={1.5} size="1.3rem" />
-    );
+  const itemIcon = Icon
+    ? level > 1
+      ? <Icon stroke={1.5} size="1rem" />
+      : <Icon stroke={1.5} size="1.3rem" />
+    : null;
 
-  const ListItemStyled = styled(ListItemButton)(() => ({
+  const listItemSx = {
     whiteSpace: "nowrap",
     marginBottom: "2px",
     padding: "10px 12px",
@@ -68,24 +66,34 @@ const NavItem = ({
         color: isSidebarDark ? "#ffffff" : theme.palette.text.primary,
       },
     },
-  }));
+  } as const;
 
-  const listItemProps: {
-    component: any;
-    href?: string;
-    target?: any;
-    to?: any;
-  } = {
-    component: item?.external ? "a" : NavLink,
-    to: item?.href,
-    href: item?.external ? item?.href : "",
-    target: item?.external ? "_blank" : "",
-  };
+  const chipColorOptions = [
+    "default",
+    "primary",
+    "secondary",
+    "error",
+    "info",
+    "success",
+    "warning",
+  ] as const;
+  const chipColor = chipColorOptions.includes(item?.chipColor as any)
+    ? (item?.chipColor as (typeof chipColorOptions)[number])
+    : "default";
+
+  const chipVariantOptions = ["filled", "outlined"] as const;
+  const chipVariant = chipVariantOptions.includes(item?.variant as any)
+    ? (item?.variant as (typeof chipVariantOptions)[number])
+    : "filled";
 
   return (
     <List component="li" disablePadding key={item?.id && item.title}>
-      <ListItemStyled
-        {...listItemProps}
+      <ListItemButton
+        sx={listItemSx}
+        component={item?.external ? "a" : NavLink}
+        to={item?.external ? undefined : item?.href}
+        href={item?.external ? item?.href : undefined}
+        target={item?.external ? "_blank" : undefined}
         disabled={item?.disabled}
         selected={pathDirect === item?.href}
         onClick={onClick}
@@ -117,13 +125,13 @@ const NavItem = ({
 
         {!item?.chip || hideMenu ? null : (
           <Chip
-            color={item?.chipColor}
-            variant={item?.variant ? item?.variant : "filled"}
+            color={chipColor}
+            variant={chipVariant}
             size="small"
             label={item?.chip}
           />
         )}
-      </ListItemStyled>
+      </ListItemButton>
     </List>
   );
 };
