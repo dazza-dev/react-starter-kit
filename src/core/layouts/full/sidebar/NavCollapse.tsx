@@ -102,7 +102,7 @@ const NavCollapse = ({
         : isSidebarDark
         ? "#ffffff"
         : theme.palette.text.primary,
-    borderRadius: "7px",
+    
     fontWeight: 700,
   }));
 

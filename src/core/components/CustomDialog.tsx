@@ -25,7 +25,27 @@ export default function CustomDialog({
   return (
     <Dialog open={open} onClose={onClose} fullWidth={fullWidth} maxWidth={maxWidth}>
       {title ? <DialogTitle>{title}</DialogTitle> : null}
-      <DialogContent sx={[{ display: "flex", flexDirection: "column", gap: 2, mt: 1 }, contentSx]}> {children} </DialogContent>
+      <DialogContent
+        sx={
+          typeof contentSx === "function"
+            ? (theme) => ({
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+                mt: 1,
+                ...contentSx(theme),
+              })
+            : {
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+                mt: 1,
+                ...(contentSx ?? {}),
+              }
+        }
+      >
+        {children}
+      </DialogContent>
       {actions ? <DialogActions>{actions}</DialogActions> : null}
     </Dialog>
   );

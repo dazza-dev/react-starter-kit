@@ -1,4 +1,4 @@
-import { ListSubheader, styled, useTheme } from "@mui/material";
+import { ListSubheader, styled } from "@mui/material";
 import { useContext } from "react";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
 import { IconDots } from "@tabler/icons-react";
@@ -14,7 +14,6 @@ interface ItemType {
 }
 
 const NavGroup = ({ item, hideMenu }: ItemType) => {
-  const theme = useTheme();
   const { activeMode, sidebarBackground } = useContext(CustomizerContext);
   const isSidebarDark = activeMode === "dark" || sidebarBackground === "colored";
 
