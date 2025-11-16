@@ -81,6 +81,7 @@ const Sidebar: FC = () => {
                 }),
                 width: toggleWidth,
                 boxSizing: "border-box",
+                border: "0 !important",
                 backgroundColor: sidebarBgColor,
               },
             },
