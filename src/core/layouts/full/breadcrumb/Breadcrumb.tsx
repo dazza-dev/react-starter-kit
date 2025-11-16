@@ -1,16 +1,22 @@
 import { Grid, Typography, Box, Breadcrumbs, Link } from "@mui/material";
+import type { FC, ReactNode } from "react";
 import { NavLink } from "react-router";
 import breadcrumbImg from "src/assets/images/breadcrumb/breadcrumb.png";
 import { IconCircle } from "@tabler/icons-react";
 
-interface BreadCrumbType {
-  subtitle?: string;
-  items?: any[];
+interface BreadcrumbItem {
   title: string;
-  children?: any;
+  to?: string;
 }
 
-const Breadcrumb = ({ subtitle, items, title, children }: BreadCrumbType) => (
+interface BreadCrumbType {
+  subtitle?: string;
+  items?: BreadcrumbItem[];
+  title: string;
+  children?: ReactNode;
+}
+
+const Breadcrumb: FC<BreadCrumbType> = ({ subtitle, items, title, children }) => (
   <Grid
     container
     sx={{
