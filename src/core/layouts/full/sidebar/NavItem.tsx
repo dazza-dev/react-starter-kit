@@ -26,8 +26,9 @@ const NavItem = ({
   const isSidebarDark =
     activeMode === "dark" || sidebarBackground === "colored";
   const { t } = useTranslation();
+  const currentLevel = level ?? 1;
   const itemIcon = Icon
-    ? level > 1
+    ? currentLevel > 1
       ? <Icon stroke={1.5} size="1rem" />
       : <Icon stroke={1.5} size="1.3rem" />
     : null;
@@ -37,9 +38,9 @@ const NavItem = ({
     marginBottom: "2px",
     padding: "10px 12px",
     borderRadius: "9px",
-    backgroundColor: level > 1 ? "transparent !important" : "inherit",
+    backgroundColor: currentLevel > 1 ? "transparent !important" : "inherit",
     color:
-      level > 1 && pathDirect === item?.href
+      currentLevel > 1 && pathDirect === item?.href
         ? `${theme.palette.primary.main}!important`
         : isSidebarDark
         ? "#ffffff"
@@ -47,7 +48,11 @@ const NavItem = ({
     fontWeight: 700,
     fontSize: "1rem",
     letterSpacing: "0.01em",
-    paddingLeft: hideMenu ? "10px" : level > 2 ? `${level * 15}px` : "10px",
+    paddingLeft: hideMenu
+      ? "10px"
+      : currentLevel > 2
+      ? `${currentLevel * 15}px`
+      : "10px",
     "&:hover": {
       backgroundColor: isSidebarDark
         ? "rgba(255,255,255,0.08)"
@@ -112,7 +117,7 @@ const NavItem = ({
             p: "3px 0",
             color: isSidebarDark
               ? "#ffffff"
-              : level > 1 && pathDirect === item?.href
+              : currentLevel > 1 && pathDirect === item?.href
               ? `${theme.palette.primary.main}!important`
               : theme.palette.text.primary,
           }}

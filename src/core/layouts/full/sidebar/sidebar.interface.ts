@@ -1,18 +1,13 @@
-import type { NavGroup } from "./sidebar.type";
+import type { NavGroup, MenuitemsType } from "./sidebar.type";
 
-export type NavGroupProps = NavGroup & {
-  [x: string]: any;
-  title?: string;
-  icon?: any;
-  href?: any;
-};
+export type NavGroupProps = MenuitemsType;
 
 export interface NavCollapseProps {
-  menu: NavGroupProps;
+  menu: MenuitemsType;
   level: number;
-  pathWithoutLastPart: any;
-  pathDirect: any;
-  hideMenu: any;
+  pathWithoutLastPart: string;
+  pathDirect: string;
+  hideMenu: boolean;
   onClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 

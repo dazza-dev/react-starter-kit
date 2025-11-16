@@ -1,19 +1,31 @@
-import React from "react";
+import type { ElementType, MouseEvent } from "react";
 
 export type NavGroup = {
   navLabel?: boolean;
   subheader?: string;
 };
 
+export type ChipColor =
+  | "default"
+  | "primary"
+  | "secondary"
+  | "error"
+  | "info"
+  | "success"
+  | "warning";
+
+export type ChipVariant = "filled" | "outlined";
+
 export type NavItemCommonType = NavGroup & {
-  [x: string]: any;
   id?: string;
   title?: string;
-  icon?: any;
+  subtitle?: string;
+  icon?: ElementType;
   href?: string;
+  disabled?: boolean;
   chip?: string;
-  chipColor?: string;
-  variant?: string | any;
+  chipColor?: ChipColor;
+  variant?: ChipVariant;
   external?: boolean;
 };
 
@@ -21,16 +33,15 @@ export type MenuitemsType = NavItemCommonType & {
   children?: MenuitemsType[];
 };
 
-export type NavGroupItem = NavItemCommonType & {
-  children?: NavGroup[];
+export type NavGroupItem = MenuitemsType & {
   level?: number;
-  onClick?: React.MouseEvent<HTMLButtonElement, MouseEvent>;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 };
 
 export type NavItemType = {
   item: NavGroupItem;
-  hideMenu?: any;
-  onClick: (event: React.MouseEvent<HTMLElement>) => void;
-  level?: number | any;
+  hideMenu?: boolean | string;
+  onClick: (event: MouseEvent<HTMLElement>) => void;
+  level?: number;
   pathDirect: string;
 };
