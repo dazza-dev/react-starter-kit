@@ -1,4 +1,5 @@
 import { uniqueId } from "lodash";
+import type { MenuitemsType } from "./sidebar.type";
 import {
   IconAward,
   IconBoxMultiple,
@@ -8,8 +9,10 @@ import {
   IconMoodSmile,
   IconAperture,
 } from "@tabler/icons-react";
-import type { MenuitemsType } from "./sidebar.type";
 
+/**
+ * Menu items for the sidebar.
+ */
 const Menuitems: MenuitemsType[] = [
   {
     navLabel: true,

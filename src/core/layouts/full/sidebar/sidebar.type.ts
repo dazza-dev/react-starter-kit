@@ -42,3 +42,28 @@ export type NavCollapseProps = {
   hideMenu: any;
   onClick: (event: React.MouseEvent<HTMLElement>) => void;
 };
+
+export type NavGroupItem = {
+  [x: string]: any;
+  id?: string;
+  navLabel?: boolean;
+  subheader?: string;
+  title?: string;
+  icon?: any;
+  href?: string;
+  children?: NavGroup[];
+  chip?: string;
+  chipColor?: any;
+  variant?: string | any;
+  external?: boolean;
+  level?: number;
+  onClick?: React.MouseEvent<HTMLButtonElement, MouseEvent>;
+};
+
+export type NavItemType = {
+  item: NavGroupItem;
+  hideMenu?: any;
+  onClick: (event: React.MouseEvent<HTMLElement>) => void;
+  level?: number | any;
+  pathDirect: string;
+};

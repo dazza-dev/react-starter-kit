@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router";
 import {
   ListItemIcon,
@@ -13,33 +12,15 @@ import {
 import { useTranslation } from "react-i18next";
 import { useContext } from "react";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
+import type { NavItemType } from "./sidebar.type";
 
-type NavGroup = {
-  [x: string]: any;
-  id?: string;
-  navLabel?: boolean;
-  subheader?: string;
-  title?: string;
-  icon?: any;
-  href?: string;
-  children?: NavGroup[];
-  chip?: string;
-  chipColor?: any;
-  variant?: string | any;
-  external?: boolean;
-  level?: number;
-  onClick?: React.MouseEvent<HTMLButtonElement, MouseEvent>;
-};
-
-interface ItemType {
-  item: NavGroup;
-  hideMenu?: any;
-  onClick: (event: React.MouseEvent<HTMLElement>) => void;
-  level?: number | any;
-  pathDirect: string;
-}
-
-const NavItem = ({ item, level, pathDirect, hideMenu, onClick }: ItemType) => {
+const NavItem = ({
+  item,
+  level,
+  pathDirect,
+  hideMenu,
+  onClick,
+}: NavItemType) => {
   const Icon = item?.icon;
   const theme = useTheme();
   const { activeMode, sidebarBackground } = useContext(CustomizerContext);
