@@ -14,24 +14,7 @@ import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
 import { useContext } from "react";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
-
-type NavGroupProps = {
-  [x: string]: any;
-  navLabel?: boolean;
-  subheader?: string;
-  title?: string;
-  icon?: any;
-  href?: any;
-};
-
-interface NavCollapseProps {
-  menu: NavGroupProps;
-  level: number;
-  pathWithoutLastPart: any;
-  pathDirect: any;
-  hideMenu: any;
-  onClick: (event: React.MouseEvent<HTMLElement>) => void;
-}
+import type { NavCollapseProps } from "../sidebar.type";
 
 // FC Component For Dropdown Menu
 const NavCollapse = ({
@@ -102,7 +85,6 @@ const NavCollapse = ({
         : isSidebarDark
         ? "#ffffff"
         : theme.palette.text.primary,
-    
     fontWeight: 700,
   }));
 

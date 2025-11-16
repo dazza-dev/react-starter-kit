@@ -20,6 +20,7 @@ const Sidebar: FC = () => {
     activeMode,
   } = useContext(CustomizerContext);
 
+  // Sidebar width
   const MiniSidebarWidth = config.miniSidebarWidth;
   const SidebarWidth = config.sidebarWidth;
 
