@@ -7,7 +7,7 @@ interface ProfileType {
   icon: string;
 }
 
-const profile: ProfileType[] = [
+const profileData: ProfileType[] = [
   {
     href: "/",
     title: "My Profile",
@@ -16,4 +16,4 @@ const profile: ProfileType[] = [
   },
 ];
 
-export { profile };
+export default profileData;

@@ -11,7 +11,7 @@ import {
   IconButton,
   Stack,
 } from "@mui/material";
-import * as dropdownData from "./profileData";
+import profileData from "./profileData";
 import { IconMail } from "@tabler/icons-react";
 import ProfileImg from "@/assets/images/profile/user.jpg";
 
@@ -96,7 +96,7 @@ const Profile: FC = () => {
           </Box>
         </Stack>
         <Divider />
-        {dropdownData.profile.map((profile) => (
+        {profileData.map((profile) => (
           <Box key={profile.title}>
             <Box sx={{ py: 2, px: 0 }} className="hover-text-primary">
               <Link to={profile.href}>

@@ -12,7 +12,7 @@ import {
   Chip,
   Stack,
 } from "@mui/material";
-import * as dropdownData from "./notificationData";
+import notifications from "./notificationData";
 import Scrollbar from "@/core/components/Scrollbar";
 import { IconBellRinging } from "@tabler/icons-react";
 import { Link } from "react-router";
@@ -73,7 +73,7 @@ const Notifications: FC = () => {
           <Chip label="5 new" color="primary" size="small" />
         </Stack>
         <Scrollbar sx={{ height: "385px" }}>
-          {dropdownData.notifications.map((notification, index) => (
+          {notifications.map((notification, index) => (
             <Box key={index}>
               <MenuItem sx={{ py: 2, px: 4 }}>
                 <Stack direction="row" spacing={2}>

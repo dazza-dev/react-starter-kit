@@ -49,4 +49,4 @@ const notifications: notificationType[] = [
   },
 ];
 
-export { notifications };
+export default notifications;
