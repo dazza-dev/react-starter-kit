@@ -59,6 +59,11 @@ const baseLightTheme = {
       hover: "#f6f9fc",
     },
     divider: "#ebf1f6",
+    background: {
+      default: "#efefef",
+      dark: "#ffffff",
+      paper: "#ffffff",
+    },
   },
 };
 

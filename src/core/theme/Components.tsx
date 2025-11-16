@@ -19,6 +19,7 @@ const components: any = (theme: Theme) => {
           height: "100%",
           margin: 0,
           padding: 0,
+          backgroundColor: (theme as any).palette.background.default,
         },
         "#root": {
           height: "100%",
