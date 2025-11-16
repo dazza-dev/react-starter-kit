@@ -11,7 +11,7 @@ import {
   IconButton,
   Stack,
 } from "@mui/material";
-import * as dropdownData from "./data";
+import * as dropdownData from "./profileData";
 import { IconMail } from "@tabler/icons-react";
 import ProfileImg from "@/assets/images/profile/user.jpg";
 
@@ -76,7 +76,7 @@ const Profile: FC = () => {
             <Typography
               variant="subtitle2"
               color="textPrimary"
-              fontWeight={600}
+              fontWeight={700}
             >
               Mathew Anderson
             </Typography>

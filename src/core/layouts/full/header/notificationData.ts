@@ -1,7 +1,5 @@
 import userImg from "@/assets/images/profile/user.jpg";
-import iconAccount from "@/assets/images/icons/icon-account.svg";
 
-// Notifications dropdown
 interface notificationType {
   avatar: string;
   title: string;
@@ -51,22 +49,4 @@ const notifications: notificationType[] = [
   },
 ];
 
-//
-// Profile dropdown
-//
-interface ProfileType {
-  href: string;
-  title: string;
-  subtitle: string;
-  icon: any;
-}
-const profile: ProfileType[] = [
-  {
-    href: "/",
-    title: "My Profile",
-    subtitle: "Account Settings",
-    icon: iconAccount,
-  },
-];
-
-export { notifications, profile };
+export { notifications };

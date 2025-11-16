@@ -11,7 +11,7 @@ import {
   Chip,
   Stack,
 } from "@mui/material";
-import * as dropdownData from "./data";
+import * as dropdownData from "./notificationData";
 import Scrollbar from "@/core/components/Scrollbar";
 import { IconBellRinging } from "@tabler/icons-react";
 import { Link } from "react-router";
