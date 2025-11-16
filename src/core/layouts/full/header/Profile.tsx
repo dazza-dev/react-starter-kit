@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { FC, MouseEvent } from "react";
 import { Link } from "react-router";
 import {
   Box,
@@ -14,9 +15,9 @@ import * as dropdownData from "./data";
 import { IconMail } from "@tabler/icons-react";
 import ProfileImg from "@/assets/images/profile/user.jpg";
 
-const Profile = () => {
-  const [anchorEl2, setAnchorEl2] = useState(null);
-  const handleClick2 = (event: any) => {
+const Profile: FC = () => {
+  const [anchorEl2, setAnchorEl2] = useState<HTMLElement | null>(null);
+  const handleClick2 = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl2(event.currentTarget);
   };
   const handleClose2 = () => {
