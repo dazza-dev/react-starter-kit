@@ -29,8 +29,21 @@ const SidebarWidth = "320px";
 interface colors {
   id: number;
   bgColor: string;
-  disp?: string;
+  disp: string;
 }
+
+const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({
+  boxShadow: theme.shadows[8],
+  padding: "20px",
+  cursor: "pointer",
+  justifyContent: "center",
+  display: "flex",
+  transition: "0.1s ease-in",
+  border: "1px solid rgba(145, 158, 171, 0.12)",
+  "&:hover": {
+    transform: "scale(1.05)",
+  },
+}));
 
 const Customizer: FC = () => {
   const [showDrawer, setShowDrawer] = useState(false);
@@ -47,24 +60,14 @@ const Customizer: FC = () => {
     setSidebarBackground,
   } = useContext(CustomizerContext);
 
-  const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({
-    boxShadow: theme.shadows[8],
-    padding: "20px",
-    cursor: "pointer",
-    justifyContent: "center",
-    display: "flex",
-    transition: "0.1s ease-in",
-    border: "1px solid rgba(145, 158, 171, 0.12)",
-    "&:hover": {
-      transform: "scale(1.05)",
-    },
-  }));
-
-  const addAttributeToBody = (cvalue: any) => {
-    document.body.setAttribute("data-color-theme", cvalue);
+  const addAttributeToBody = (colorValue: string): void => {
+    document.body.setAttribute("data-color-theme", colorValue);
   };
 
-  const thColors: colors[] = [
+  /**
+   * theme colors
+   */
+  const themeColors: colors[] = [
     {
       id: 1,
       bgColor: "#5D87FF",
@@ -179,13 +182,15 @@ const Customizer: FC = () => {
               Theme Colors
             </Typography>
             <Grid container spacing={2}>
-              {thColors.map((thcolor) => (
-                <Grid key={thcolor.id} size={4}>
-                  <StyledBox onClick={() => addAttributeToBody(thcolor.disp)}>
-                    <Tooltip title={`${thcolor.disp}`} placement="top">
+              {themeColors.map((themeColor) => (
+                <Grid key={themeColor.id} size={4}>
+                  <StyledBox
+                    onClick={() => addAttributeToBody(themeColor.disp)}
+                  >
+                    <Tooltip title={`${themeColor.disp}`} placement="top">
                       <Box
                         sx={{
-                          backgroundColor: thcolor.bgColor,
+                          backgroundColor: themeColor.bgColor,
                           width: "25px",
                           height: "25px",
                           borderRadius: "60px",
@@ -194,10 +199,10 @@ const Customizer: FC = () => {
                           display: "flex",
                           color: "white",
                         }}
-                        aria-label={`${thcolor.bgColor}`}
-                        onClick={() => setActiveTheme(thcolor.disp)}
+                        aria-label={`${themeColor.bgColor}`}
+                        onClick={() => setActiveTheme(themeColor.disp)}
                       >
-                        {activeTheme === thcolor.disp ? (
+                        {activeTheme === themeColor.disp ? (
                           <IconCheck width={13} />
                         ) : (
                           ""
