@@ -1,5 +1,20 @@
 import React from "react";
 
+export type MenuitemsType = {
+  [x: string]: any;
+  id?: string;
+  navLabel?: boolean;
+  subheader?: string;
+  title?: string;
+  icon?: any;
+  href?: string;
+  children?: MenuitemsType[];
+  chip?: string;
+  chipColor?: string;
+  variant?: string;
+  external?: boolean;
+};
+
 export type NavGroupProps = {
   [x: string]: any;
   navLabel?: boolean;

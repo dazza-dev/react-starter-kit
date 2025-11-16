@@ -1,19 +1,4 @@
 import { uniqueId } from "lodash";
-
-interface MenuitemsType {
-  [x: string]: any;
-  id?: string;
-  navLabel?: boolean;
-  subheader?: string;
-  title?: string;
-  icon?: any;
-  href?: string;
-  children?: MenuitemsType[];
-  chip?: string;
-  chipColor?: string;
-  variant?: string;
-  external?: boolean;
-}
 import {
   IconAward,
   IconBoxMultiple,
@@ -23,6 +8,7 @@ import {
   IconMoodSmile,
   IconAperture,
 } from "@tabler/icons-react";
+import type { MenuitemsType } from "./sidebar.type";
 
 const Menuitems: MenuitemsType[] = [
   {
