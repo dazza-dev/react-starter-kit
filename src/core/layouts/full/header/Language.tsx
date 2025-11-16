@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import type { FC, MouseEvent } from "react";
 import {
   Avatar,
   IconButton,
@@ -7,7 +8,7 @@ import {
   Typography,
   Stack,
 } from "@mui/material";
-import { useTranslation } from "react-i18next";
+import i18n from "@/utils/i18n";
 import { useEffect } from "react";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
 
@@ -17,7 +18,13 @@ import FlagFr from "@/assets/images/flags/flag-fr.svg";
 import FlagEs from "@/assets/images/flags/flag-es.svg";
 import FlagPt from "@/assets/images/flags/flag-pt.svg";
 
-const Languages = [
+interface LanguageOption {
+  flagName: string;
+  icon: string;
+  value: string;
+}
+
+const Languages: LanguageOption[] = [
   {
     flagName: "English (US)",
     icon: FlagEn,
@@ -40,16 +47,16 @@ const Languages = [
     value: "pt",
   },
 ];
-const Language = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+
+const Language: FC = () => {
+  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
 
   const open = Boolean(anchorEl);
   const { isLanguage, setIsLanguage } = useContext(CustomizerContext);
 
   const currentLang =
     Languages.find((_lang) => _lang.value === isLanguage) || Languages[1];
-  const { i18n } = useTranslation();
-  const handleClick = (event: any) => {
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -57,7 +64,7 @@ const Language = () => {
   };
   useEffect(() => {
     i18n.changeLanguage(isLanguage);
-  }, []);
+  }, [isLanguage]);
 
   return (
     <>
