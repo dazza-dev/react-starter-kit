@@ -78,10 +78,10 @@ const Profile: FC = () => {
               color="textPrimary"
               fontWeight={700}
             >
-              Mathew Anderson
+              Admin User
             </Typography>
             <Typography variant="subtitle2" color="textSecondary">
-              Designer
+              Admin
             </Typography>
             <Typography
               variant="subtitle2"
@@ -91,7 +91,7 @@ const Profile: FC = () => {
               gap={1}
             >
               <IconMail width={15} height={15} />
-              info@modernize.com
+              admin@admin.com
             </Typography>
           </Box>
         </Stack>

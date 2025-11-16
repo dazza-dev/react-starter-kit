@@ -7,46 +7,11 @@ interface notificationType {
 }
 
 const notifications: notificationType[] = [
-  {
-    avatar: userImg,
-    title: "Roman Joined the Team!",
-    subtitle: "Congratulate him",
-  },
-  {
-    avatar: userImg,
-    title: "New message received",
-    subtitle: "Salma sent you new message",
-  },
-  {
-    avatar: userImg,
-    title: "New Payment received",
-    subtitle: "Check your earnings",
-  },
-  {
-    avatar: userImg,
-    title: "Jolly completed tasks",
-    subtitle: "Assign her new tasks",
-  },
-  {
-    avatar: userImg,
-    title: "Roman Joined the Team!",
-    subtitle: "Congratulate him",
-  },
-  {
-    avatar: userImg,
-    title: "New message received",
-    subtitle: "Salma sent you new message",
-  },
-  {
-    avatar: userImg,
-    title: "New Payment received",
-    subtitle: "Check your earnings",
-  },
-  {
-    avatar: userImg,
-    title: "Jolly completed tasks",
-    subtitle: "Assign her new tasks",
-  },
+  { avatar: userImg, title: "Notification 1", subtitle: "Details for Notification 1" },
+  { avatar: userImg, title: "Notification 2", subtitle: "Details for Notification 2" },
+  { avatar: userImg, title: "Notification 3", subtitle: "Details for Notification 3" },
+  { avatar: userImg, title: "Notification 4", subtitle: "Details for Notification 4" },
+  { avatar: userImg, title: "Notification 5", subtitle: "Details for Notification 5" },
 ];
 
 export default notifications;
