@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { FC, MouseEvent } from "react";
 import {
   IconButton,
   Box,
@@ -16,10 +17,10 @@ import Scrollbar from "@/core/components/Scrollbar";
 import { IconBellRinging } from "@tabler/icons-react";
 import { Link } from "react-router";
 
-const Notifications = () => {
-  const [anchorEl2, setAnchorEl2] = useState(null);
+const Notifications: FC = () => {
+  const [anchorEl2, setAnchorEl2] = useState<HTMLElement | null>(null);
 
-  const handleClick2 = (event: any) => {
+  const handleClick2 = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl2(event.currentTarget);
   };
 

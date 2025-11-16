@@ -18,6 +18,7 @@ import { CustomizerContext } from "@/core/context/CustomizerContext";
 
 const Header = () => {
   const lgUp = useMediaQuery((theme: any) => theme.breakpoints.up("lg"));
+
   const {
     activeMode,
     setActiveMode,
@@ -38,6 +39,7 @@ const Header = () => {
       minHeight: TopBarHeight,
     },
   }));
+
   const ToolbarStyled = styled(Toolbar)(({ theme }) => ({
     width: "100%",
     color: theme.palette.text.secondary,
