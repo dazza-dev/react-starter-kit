@@ -1,8 +1,9 @@
 import { useDeleteUser } from "@/modules/users/hooks/useUsers";
 import { useUserStore } from "@/modules/users/store/useUserStore";
 import DeleteConfirmDialog from "@/core/components/DeleteConfirmDialog";
+import type { ReactElement } from "react";
 
-export default function ConfirmDeleteDialog(): JSX.Element {
+export default function ConfirmDeleteDialog(): ReactElement {
   const { isDeleteConfirmOpen, toggleDeleteConfirm, selectedUser } =
     useUserStore();
   const deleteUser = useDeleteUser();
