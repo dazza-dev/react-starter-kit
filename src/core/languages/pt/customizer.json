@@ -1,0 +1,17 @@
+{
+  "settings": "Configurações",
+  "themeOption": "Opções de tema",
+  "light": "Claro",
+  "dark": "Escuro",
+  "system": "Sistema",
+  "themeColor": "Cor do tema",
+  "sidebarBackground": "Fundo da barra lateral",
+  "colored": "Colorido",
+  "integrated": "Integrado",
+  "containerOption": "Layout do contêiner",
+  "boxed": "Em caixa",
+  "full": "Completo",
+  "cardWith": "Estilo do cartão",
+  "border": "Borda",
+  "shadow": "Sombra"
+}

@@ -1,0 +1,17 @@
+{
+  "settings": "Settings",
+  "themeOption": "Theme Options",
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System",
+  "themeColor": "Theme Color",
+  "sidebarBackground": "Sidebar Background",
+  "colored": "Colored",
+  "integrated": "Integrated",
+  "containerOption": "Container Layout",
+  "boxed": "Boxed",
+  "full": "Full",
+  "cardWith": "Card Style",
+  "border": "Border",
+  "shadow": "Shadow"
+}

@@ -1,0 +1,31 @@
+{
+  "home": "Home",
+  "language": {
+    "english": "Anglais (US)",
+    "spanish": "Espagnol (ES)",
+    "french": "Français (FR)",
+    "portuguese": "Portugais (PT)"
+  },
+  "search": {
+    "placeholder": "Rechercher ici",
+    "ariaLabel": "Rechercher ici",
+    "resultsFor": "Résultats de recherche pour :"
+  },
+  "profile": {
+    "myProfile": "Mon profil",
+    "accountSettings": "Paramètres du compte",
+    "logout": "Se déconnecter"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "newCount": "{{count}} nouvelles",
+    "seeAll": "Voir toutes les notifications",
+    "itemTitle": "Notification {{num}}",
+    "itemSubtitle": "Détails de la notification {{num}}"
+  },
+  "error": {
+    "title": "Oups !",
+    "description": "La page que vous recherchez est introuvable.",
+    "backToHome": "Retour à l’accueil"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "home": "Home",
+  "language": {
+    "english": "Inglês (US)",
+    "spanish": "Espanhol (ES)",
+    "french": "Francês (FR)",
+    "portuguese": "Português (PT)"
+  },
+  "search": {
+    "placeholder": "Pesquisar aqui",
+    "ariaLabel": "Pesquisar aqui",
+    "resultsFor": "Resultados de pesquisa para:"
+  },
+  "profile": {
+    "myProfile": "Meu perfil",
+    "accountSettings": "Configurações da conta",
+    "logout": "Sair"
+  },
+  "notifications": {
+    "title": "Notificações",
+    "newCount": "{{count}} novas",
+    "seeAll": "Ver todas as notificações",
+    "itemTitle": "Notificação {{num}}",
+    "itemSubtitle": "Detalhes da notificação {{num}}"
+  },
+  "error": {
+    "title": "Ops!",
+    "description": "A página que você está procurando não foi encontrada.",
+    "backToHome": "Voltar para a página inicial"
+  }
+}
