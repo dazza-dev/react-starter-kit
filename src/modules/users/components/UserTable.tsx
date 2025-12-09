@@ -13,7 +13,9 @@ export default function UserTable() {
 
   const columns: GridColDef[] = [
     { field: "id", headerName: "ID", width: 70 },
+    { field: "avatar", headerName: "Avatar", flex: 1 },
     { field: "name", headerName: "Nombre", flex: 1 },
+    { field: "username", headerName: "Nombre de Usuario", flex: 1 },
     { field: "email", headerName: "Email", flex: 1 },
     {
       field: "actions",
