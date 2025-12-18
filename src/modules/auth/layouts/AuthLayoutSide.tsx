@@ -1,7 +1,7 @@
 import { Grid, Box } from "@mui/material";
 import LogoAuth from "@/core/components/logo/LogoAuth";
 import PageContainer from "@/core/components/PageContainer";
-import loginBg from "@/assets/images/backgrounds/login-bg.svg";
+import loginBg from "@/assets/images/backgrounds/login-bg.png";
 import type { ReactNode } from "react";
 
 type Props = {

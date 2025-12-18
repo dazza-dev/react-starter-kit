@@ -2,7 +2,7 @@ import type { FC } from "react";
 import { Box, Container, Typography, Button } from "@mui/material";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
-import ErrorImg from "@/assets/images/backgrounds/404-error.gif";
+import ErrorImg from "@/assets/images/backgrounds/404-error.png";
 
 const Error: FC = () => {
   const { t } = useTranslation();
