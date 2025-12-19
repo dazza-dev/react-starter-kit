@@ -8,7 +8,7 @@ import {
   Typography,
   Stack,
 } from "@mui/material";
-import i18n from "@/utils/i18n";
+import i18n from "@/core/utils/i18n";
 import { useEffect } from "react";
 import { CustomizerContext } from "@/core/context/CustomizerContext";
 import { useTranslation } from "react-i18next";
