@@ -1,24 +1,81 @@
 import { TextField, Button } from "@mui/material";
-import { useState } from "react";
+import { useEffect } from "react";
+import { useForm, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { useCreateUser, useUpdateUser } from "@/modules/users/hooks/useUsers";
 import { useUserStore } from "@/modules/users/store/useUserStore";
 import CustomDialog from "@/core/components/modals/CustomDialog";
 
+const schema = z.object({
+  name: z.string().min(1, "El nombre es obligatorio"),
+  username: z.string().optional(),
+  email: z.string().email("Email inválido").min(1, "El email es obligatorio"),
+  password: z.string().optional(),
+  avatar: z.string().optional(),
+});
+
+type FormData = z.infer<typeof schema>;
+
 export default function UserFormDialog() {
   const { isFormOpen, toggleForm, selectedUser } = useUserStore();
-  const [form, setForm] = useState({
-    name: selectedUser?.name ?? "",
-    email: selectedUser?.email ?? "",
-    role: selectedUser?.role ?? "",
-  });
-
   const createUser = useCreateUser();
   const updateUser = useUpdateUser();
 
-  const handleSubmit = (): void => {
-    if (selectedUser) updateUser.mutate({ ...form, id: selectedUser.id });
-    else createUser.mutate(form);
-    toggleForm(false);
+  const {
+    control,
+    handleSubmit,
+    reset,
+    setError,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      name: "",
+      username: "",
+      email: "",
+      password: "",
+      avatar: "",
+    },
+  });
+
+  useEffect(() => {
+    if (isFormOpen) {
+      reset({
+        name: selectedUser?.name ?? "",
+        username: selectedUser?.username ?? "",
+        email: selectedUser?.email ?? "",
+        password: "",
+        avatar: selectedUser?.avatar ?? "",
+      });
+    }
+  }, [isFormOpen, selectedUser, reset]);
+
+  const onSubmit = (data: FormData) => {
+    const payload = {
+      ...data,
+      username: data.username || null,
+      avatar: data.avatar || null,
+      password: data.password || "",
+    };
+
+    const mutation = selectedUser
+      ? updateUser.mutateAsync({ ...payload, id: selectedUser.id })
+      : createUser.mutateAsync(payload);
+
+    mutation
+      .then(() => toggleForm(false))
+      .catch((error) => {
+        if (error.response?.data?.errors) {
+          const apiErrors = error.response.data.errors;
+          Object.keys(apiErrors).forEach((key) => {
+            setError(key as keyof FormData, {
+              type: "manual",
+              message: apiErrors[key][0],
+            });
+          });
+        }
+      });
   };
 
   return (
@@ -30,26 +87,82 @@ export default function UserFormDialog() {
       actions={
         <>
           <Button onClick={() => toggleForm(false)}>Cancelar</Button>
-          <Button variant="contained" onClick={handleSubmit}>
+          <Button variant="contained" onClick={handleSubmit(onSubmit)}>
             {selectedUser ? "Actualizar" : "Crear"}
           </Button>
         </>
       }
     >
-      <TextField
-        label="Nombre"
-        value={form.name}
-        onChange={(e) => setForm({ ...form, name: e.target.value })}
+      <Controller
+        name="name"
+        control={control}
+        render={({ field }) => (
+          <TextField
+            {...field}
+            label="Nombre"
+            error={!!errors.name}
+            helperText={errors.name?.message}
+            fullWidth
+            margin="normal"
+          />
+        )}
       />
-      <TextField
-        label="Email"
-        value={form.email}
-        onChange={(e) => setForm({ ...form, email: e.target.value })}
+      <Controller
+        name="username"
+        control={control}
+        render={({ field }) => (
+          <TextField
+            {...field}
+            label="Usuario"
+            error={!!errors.username}
+            helperText={errors.username?.message}
+            fullWidth
+            margin="normal"
+          />
+        )}
       />
-      <TextField
-        label="Rol"
-        value={form.role}
-        onChange={(e) => setForm({ ...form, role: e.target.value })}
+      <Controller
+        name="email"
+        control={control}
+        render={({ field }) => (
+          <TextField
+            {...field}
+            label="Email"
+            error={!!errors.email}
+            helperText={errors.email?.message}
+            fullWidth
+            margin="normal"
+          />
+        )}
+      />
+      <Controller
+        name="password"
+        control={control}
+        render={({ field }) => (
+          <TextField
+            {...field}
+            label="Contraseña"
+            type="password"
+            error={!!errors.password}
+            helperText={errors.password?.message}
+            fullWidth
+            margin="normal"
+          />
+        )}
+      />
+      <Controller
+        name="avatar"
+        control={control}
+        render={({ field }) => (
+          <TextField
+            {...field}
+            label="Avatar URL"
+            error={!!errors.avatar}
+            helperText={errors.avatar?.message}
+            fullWidth
+            margin="normal"
+          />
+        )}
       />
     </CustomDialog>
   );
