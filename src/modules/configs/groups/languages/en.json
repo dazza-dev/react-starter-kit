@@ -1,0 +1,22 @@
+{
+  "title": "Groups",
+  "subtitle": "Group users by team, area or office.",
+  "deleted": "Group deleted successfully",
+  "restored": "Group restored successfully",
+  "fields": {
+    "name": "Name",
+    "actions": "Actions"
+  },
+  "create": {
+    "button": "New Group",
+    "title": "New Group"
+  },
+  "edit": {
+    "title": "Edit Group"
+  },
+  "delete": {
+    "title": "Delete group",
+    "description": "Are you sure you want to delete the group {{name}}?"
+  },
+  "searchGroups": "Search group"
+}

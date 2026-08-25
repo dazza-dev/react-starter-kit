@@ -1,0 +1,36 @@
+{
+  "title": "Settings",
+  "subtitle": "General application configuration.",
+  "saved": "Settings saved successfully",
+  "generalInfo": "General information",
+  "logoHint": "PNG, JPG or SVG. Up to 2 MB.",
+  "tabs": {
+    "general": "General",
+    "design": "Design"
+  },
+  "fields": {
+    "appName": "Application name",
+    "email": "Contact email",
+    "notificationEmail": "Notification email",
+    "language": "Default language",
+    "timezone": "Time zone",
+    "logo": "Logo",
+    "appTheme": "Colour palette"
+  },
+  "themes": {
+    "emerald": "Emerald",
+    "default": "Default",
+    "blue": "Blue",
+    "aqua": "Aqua",
+    "purple": "Purple",
+    "green": "Green",
+    "cyan": "Cyan",
+    "orange": "Orange"
+  },
+  "discard": {
+    "title": "Discard changes?",
+    "description": "You have unsaved changes. If you leave now they will be lost.",
+    "confirm": "Leave without saving",
+    "cancel": "Keep editing"
+  }
+}

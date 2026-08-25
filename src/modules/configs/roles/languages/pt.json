@@ -1,0 +1,33 @@
+{
+  "title": "Funções",
+  "subtitle": "Defina as permissões de acesso ao sistema para cada tipo de usuário",
+  "deleted": "Função excluída com sucesso",
+  "restored": "Função restaurada com sucesso",
+  "fields": {
+    "displayName": "Nome",
+    "slug": "Identificador",
+    "description": "Descrição",
+    "actions": "Ações"
+  },
+  "actions": {
+    "permissions": "Permissões"
+  },
+  "create": {
+    "button": "Nova Função",
+    "title": "Nova Função"
+  },
+  "edit": {
+    "title": "Editar Função"
+  },
+  "delete": {
+    "title": "Excluir função",
+    "description": "Tem certeza de que deseja excluir a função {{name}}?"
+  },
+  "permissions": {
+    "saved": "Permissões atualizadas com sucesso"
+  },
+  "searchRoles": "Buscar função",
+  "permissionsLabel": "Permissões",
+  "permissionsTitle": "Permissões de {{role}}",
+  "permissionsSubtitle": "Marque o que esta função pode fazer na aplicação"
+}

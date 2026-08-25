@@ -1,0 +1,38 @@
+{
+  "title": "Users",
+  "subtitle": "Manage who has access to the application and what they can do",
+  "deleted": "User deleted successfully",
+  "restored": "User restored successfully",
+  "fields": {
+    "name": "Name",
+    "email": "Email",
+    "roles": "Role",
+    "status": "Status",
+    "actions": "Actions"
+  },
+  "form": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "username": "Username",
+    "password": "Password",
+    "passwordOptional": "Password (leave blank to keep it)",
+    "roles": "Roles",
+    "status": "Status"
+  },
+  "create": {
+    "button": "New User",
+    "title": "New User"
+  },
+  "edit": {
+    "title": "Edit User"
+  },
+  "delete": {
+    "title": "Delete user",
+    "description": "Are you sure you want to delete {{name}}? You can revert this by restoring them."
+  },
+  "searchUsers": "Search user",
+  "statusActive": "Active",
+  "statusInactive": "Inactive"
+}

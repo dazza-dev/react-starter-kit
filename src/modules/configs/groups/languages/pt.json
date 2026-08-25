@@ -1,0 +1,22 @@
+{
+  "title": "Grupos",
+  "subtitle": "Agrupe usuários por equipe, área ou unidade.",
+  "deleted": "Grupo excluído com sucesso",
+  "restored": "Grupo restaurado com sucesso",
+  "fields": {
+    "name": "Nome",
+    "actions": "Ações"
+  },
+  "create": {
+    "button": "Novo Grupo",
+    "title": "Novo Grupo"
+  },
+  "edit": {
+    "title": "Editar Grupo"
+  },
+  "delete": {
+    "title": "Excluir grupo",
+    "description": "Tem certeza de que deseja excluir o grupo {{name}}?"
+  },
+  "searchGroups": "Buscar grupo"
+}

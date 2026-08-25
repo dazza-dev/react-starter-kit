@@ -1,0 +1,36 @@
+{
+  "title": "Ajustes",
+  "subtitle": "Configuração geral da aplicação.",
+  "saved": "Ajustes salvos com sucesso",
+  "generalInfo": "Informações gerais",
+  "logoHint": "PNG, JPG ou SVG. Até 2 MB.",
+  "tabs": {
+    "general": "Geral",
+    "design": "Design"
+  },
+  "fields": {
+    "appName": "Nome da aplicação",
+    "email": "E-mail de contato",
+    "notificationEmail": "E-mail para notificações",
+    "language": "Idioma padrão",
+    "timezone": "Fuso horário",
+    "logo": "Logo",
+    "appTheme": "Paleta de cores"
+  },
+  "themes": {
+    "emerald": "Esmeralda",
+    "default": "Default",
+    "blue": "Blue",
+    "aqua": "Aqua",
+    "purple": "Purple",
+    "green": "Green",
+    "cyan": "Cyan",
+    "orange": "Orange"
+  },
+  "discard": {
+    "title": "Descartar as alterações?",
+    "description": "Você tem alterações não salvas. Se sair agora, elas serão perdidas.",
+    "confirm": "Sair sem salvar",
+    "cancel": "Continuar editando"
+  }
+}

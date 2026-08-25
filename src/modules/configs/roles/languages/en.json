@@ -1,0 +1,33 @@
+{
+  "title": "Roles",
+  "subtitle": "Define system access permissions for each type of user",
+  "deleted": "Role deleted successfully",
+  "restored": "Role restored successfully",
+  "fields": {
+    "displayName": "Name",
+    "slug": "Identifier",
+    "description": "Description",
+    "actions": "Actions"
+  },
+  "actions": {
+    "permissions": "Permissions"
+  },
+  "create": {
+    "button": "New Role",
+    "title": "New Role"
+  },
+  "edit": {
+    "title": "Edit Role"
+  },
+  "delete": {
+    "title": "Delete role",
+    "description": "Are you sure you want to delete the role {{name}}?"
+  },
+  "permissions": {
+    "saved": "Permissions updated successfully"
+  },
+  "searchRoles": "Search role",
+  "permissionsLabel": "Permissions",
+  "permissionsTitle": "{{role}} permissions",
+  "permissionsSubtitle": "Tick what this role can do in the application"
+}

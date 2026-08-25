@@ -1,0 +1,33 @@
+{
+  "title": "Roles",
+  "subtitle": "Define los permisos de acceso al sistema para cada tipo de usuario",
+  "deleted": "Rol eliminado correctamente",
+  "restored": "Rol restaurado correctamente",
+  "fields": {
+    "displayName": "Nombre",
+    "slug": "Identificador",
+    "description": "Descripción",
+    "actions": "Acciones"
+  },
+  "actions": {
+    "permissions": "Permisos"
+  },
+  "create": {
+    "button": "Nuevo Rol",
+    "title": "Nuevo Rol"
+  },
+  "edit": {
+    "title": "Editar Rol"
+  },
+  "delete": {
+    "title": "Eliminar rol",
+    "description": "¿Seguro que quieres eliminar el rol {{name}}?"
+  },
+  "permissions": {
+    "saved": "Permisos actualizados correctamente"
+  },
+  "searchRoles": "Buscar rol",
+  "permissionsLabel": "Permisos",
+  "permissionsTitle": "Permisos de {{role}}",
+  "permissionsSubtitle": "Marca lo que este rol puede hacer en la aplicación"
+}

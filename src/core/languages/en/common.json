@@ -1,0 +1,82 @@
+{
+  "home": "Home",
+  "search": "Search",
+  "save": "Save",
+  "saving": "Saving...",
+  "loading": "Loading...",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "close": "Close",
+  "back": "Back",
+  "edit": "Edit",
+  "add": "Add",
+  "create": "Create",
+  "update": "Update",
+  "delete": "Delete",
+  "view": "View",
+  "change": "Change",
+  "remove": "Remove",
+  "selectFile": "Select file",
+  "all": "All",
+  "active": "Active",
+  "inactive": "Inactive",
+  "not_found": "Not found",
+  "no_changes": "No changes to save",
+  "uploadFailed": "We could not upload the file. Please try again.",
+  "fileTooLarge": "The image exceeds the {{max}} MB limit.",
+  "invalidFormat": "Format not allowed. Use {{formats}}.",
+  "lang": {
+    "es": "Spanish",
+    "en": "English",
+    "pt": "Portuguese"
+  },
+  "profile": {
+    "myProfile": "My profile",
+    "logout": "Log out",
+    "roles": "Roles"
+  },
+  "actions": {
+    "title": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "new": "New",
+    "create": "Create",
+    "confirmDelete": "Yes, delete",
+    "cancel": "Cancel",
+    "restore": "Restore",
+    "save": "Save"
+  },
+  "success": {
+    "created": "Created successfully",
+    "updated": "Updated successfully"
+  },
+  "errors": {
+    "generic": "Something went wrong",
+    "unexpected": "An unexpected error occurred",
+    "network": "Connection error. Check your internet connection.",
+    "timeout": "The request took too long. Please try again.",
+    "sessionExpired": "Your session has expired. Please sign in again."
+  },
+  "error": {
+    "title": "Oops!",
+    "description": "We could not find the page you are looking for.",
+    "backToHome": "Back to home"
+  },
+  "forbidden": {
+    "title": "No access",
+    "description": "Your role is not allowed to see this screen. If you think this is a mistake, talk to your administrator."
+  },
+  "menu": {
+    "modules": "Modules"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "countNew": "{{count}} new",
+    "seeAll": "See all",
+    "empty": "You have no notifications"
+  },
+  "mode": {
+    "light": "Light mode",
+    "dark": "Dark mode"
+  }
+}

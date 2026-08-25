@@ -1,0 +1,32 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="220"
+  height="40"
+  viewBox="0 0 220 40"
+  fill="none"
+  role="img"
+  aria-labelledby="logoTitle"
+>
+  <title id="logoTitle">React Starter</title>
+
+  <!-- Stroke is currentColor, set by AppLogo based on the theme. Replace with your own logo. -->
+
+  <mask id="logoMarkCutout">
+    <rect x="0" y="2" width="36" height="36" rx="10" fill="#fff" />
+    <path d="M18 9.5 L27 19 L21.5 19 L21.5 30.5 L14.5 30.5 L14.5 19 L9 19 Z" fill="#000" />
+  </mask>
+
+  <rect x="0" y="2" width="36" height="36" rx="10" fill="currentColor" mask="url(#logoMarkCutout)" />
+
+  <text
+    x="48"
+    y="27"
+    font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+    font-size="21"
+    font-weight="700"
+    letter-spacing="-0.3"
+    fill="currentColor"
+  >
+    React Starter
+  </text>
+</svg>

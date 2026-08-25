@@ -1,0 +1,8 @@
+{
+  "required": "Required field",
+  "min_chars": "At least {{count}} characters",
+  "max_chars": "At most {{count}} characters",
+  "invalid_email": "Invalid email address",
+  "invalid_format": "Invalid format",
+  "passwords_not_match": "Passwords do not match"
+}

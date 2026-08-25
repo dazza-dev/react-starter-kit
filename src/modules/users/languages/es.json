@@ -1,0 +1,38 @@
+{
+  "title": "Usuarios",
+  "subtitle": "Gestiona quién tiene acceso a la aplicación y qué puede hacer",
+  "deleted": "Usuario eliminado correctamente",
+  "restored": "Usuario restaurado correctamente",
+  "fields": {
+    "name": "Nombre",
+    "email": "Correo",
+    "roles": "Rol",
+    "status": "Estado",
+    "actions": "Acciones"
+  },
+  "form": {
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "username": "Nombre de usuario",
+    "password": "Contraseña",
+    "passwordOptional": "Contraseña (déjala vacía para no cambiarla)",
+    "roles": "Roles",
+    "status": "Estado"
+  },
+  "create": {
+    "button": "Nuevo Usuario",
+    "title": "Nuevo Usuario"
+  },
+  "edit": {
+    "title": "Editar Usuario"
+  },
+  "delete": {
+    "title": "Eliminar usuario",
+    "description": "¿Seguro que quieres eliminar a {{name}}? Esta acción se puede revertir restaurándolo."
+  },
+  "searchUsers": "Buscar usuario",
+  "statusActive": "Activo",
+  "statusInactive": "Inactivo"
+}

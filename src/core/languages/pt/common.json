@@ -1,0 +1,82 @@
+{
+  "home": "Início",
+  "search": "Buscar",
+  "save": "Salvar",
+  "saving": "Salvando...",
+  "loading": "Carregando...",
+  "cancel": "Cancelar",
+  "confirm": "Confirmar",
+  "close": "Fechar",
+  "back": "Voltar",
+  "edit": "Editar",
+  "add": "Adicionar",
+  "create": "Criar",
+  "update": "Atualizar",
+  "delete": "Excluir",
+  "view": "Ver",
+  "change": "Alterar",
+  "remove": "Remover",
+  "selectFile": "Selecionar arquivo",
+  "all": "Todos",
+  "active": "Ativo",
+  "inactive": "Inativo",
+  "not_found": "Não encontrado",
+  "no_changes": "Não há alterações para salvar",
+  "uploadFailed": "Não foi possível enviar o arquivo. Tente novamente.",
+  "fileTooLarge": "A imagem excede o máximo de {{max}} MB.",
+  "invalidFormat": "Formato não permitido. Use {{formats}}.",
+  "lang": {
+    "es": "Espanhol",
+    "en": "Inglês",
+    "pt": "Português"
+  },
+  "profile": {
+    "myProfile": "Meu perfil",
+    "logout": "Sair",
+    "roles": "Perfis"
+  },
+  "actions": {
+    "title": "Ações",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "new": "Novo",
+    "create": "Criar",
+    "confirmDelete": "Sim, excluir",
+    "cancel": "Cancelar",
+    "restore": "Restaurar",
+    "save": "Salvar"
+  },
+  "success": {
+    "created": "Criado com sucesso",
+    "updated": "Atualizado com sucesso"
+  },
+  "errors": {
+    "generic": "Ocorreu um erro",
+    "unexpected": "Ocorreu um erro inesperado",
+    "network": "Erro de conexão. Verifique sua conexão com a internet.",
+    "timeout": "A solicitação demorou demais. Tente novamente.",
+    "sessionExpired": "Sua sessão expirou. Entre novamente."
+  },
+  "error": {
+    "title": "Ops!",
+    "description": "Não encontramos a página que você procura.",
+    "backToHome": "Voltar ao início"
+  },
+  "forbidden": {
+    "title": "Sem acesso",
+    "description": "Seu perfil não tem permissão para ver esta tela. Se acha que é um erro, fale com o administrador."
+  },
+  "menu": {
+    "modules": "Módulos"
+  },
+  "notifications": {
+    "title": "Notificações",
+    "countNew": "{{count}} novas",
+    "seeAll": "Ver todas",
+    "empty": "Você não tem notificações"
+  },
+  "mode": {
+    "light": "Modo claro",
+    "dark": "Modo escuro"
+  }
+}

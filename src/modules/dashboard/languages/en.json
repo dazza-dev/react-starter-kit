@@ -1,0 +1,8 @@
+{
+  "title": "Home",
+  "subtitle": "Welcome back. Here is what you can manage.",
+  "usersDescription": "People with access to the app",
+  "rolesDescription": "Roles and their permissions",
+  "groupsDescription": "Segment users into groups",
+  "settingsDescription": "General application settings"
+}

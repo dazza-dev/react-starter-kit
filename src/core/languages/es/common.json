@@ -1,0 +1,82 @@
+{
+  "home": "Inicio",
+  "search": "Buscar",
+  "save": "Guardar",
+  "saving": "Guardando...",
+  "loading": "Cargando...",
+  "cancel": "Cancelar",
+  "confirm": "Confirmar",
+  "close": "Cerrar",
+  "back": "Volver",
+  "edit": "Editar",
+  "add": "Agregar",
+  "create": "Crear",
+  "update": "Actualizar",
+  "delete": "Eliminar",
+  "view": "Ver",
+  "change": "Cambiar",
+  "remove": "Quitar",
+  "selectFile": "Seleccionar archivo",
+  "all": "Todos",
+  "active": "Activo",
+  "inactive": "Inactivo",
+  "not_found": "No encontrado",
+  "no_changes": "No hay cambios para guardar",
+  "uploadFailed": "No pudimos subir el archivo. Inténtalo de nuevo.",
+  "fileTooLarge": "La imagen supera el máximo de {{max}} MB.",
+  "invalidFormat": "Formato no permitido. Usa {{formats}}.",
+  "lang": {
+    "es": "Español",
+    "en": "Inglés",
+    "pt": "Portugués"
+  },
+  "profile": {
+    "myProfile": "Mi perfil",
+    "logout": "Cerrar sesión",
+    "roles": "Roles"
+  },
+  "actions": {
+    "title": "Acciones",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "new": "Nuevo",
+    "create": "Crear",
+    "confirmDelete": "Sí, eliminar",
+    "cancel": "Cancelar",
+    "restore": "Restaurar",
+    "save": "Guardar"
+  },
+  "success": {
+    "created": "Creado correctamente",
+    "updated": "Actualizado correctamente"
+  },
+  "errors": {
+    "generic": "Ha ocurrido un error",
+    "unexpected": "Ha ocurrido un error inesperado",
+    "network": "Error de conexión. Verifica tu conexión a internet.",
+    "timeout": "La solicitud tardó demasiado. Inténtalo de nuevo.",
+    "sessionExpired": "Tu sesión ha expirado. Inicia sesión de nuevo."
+  },
+  "error": {
+    "title": "¡Ups!",
+    "description": "No pudimos encontrar la página que buscas.",
+    "backToHome": "Volver al inicio"
+  },
+  "forbidden": {
+    "title": "No tienes acceso",
+    "description": "Tu rol no tiene permiso para ver esta pantalla. Si crees que es un error, habla con el administrador."
+  },
+  "menu": {
+    "modules": "Módulos"
+  },
+  "notifications": {
+    "title": "Notificaciones",
+    "countNew": "{{count}} nuevas",
+    "seeAll": "Ver todas",
+    "empty": "No tienes notificaciones"
+  },
+  "mode": {
+    "light": "Modo claro",
+    "dark": "Modo oscuro"
+  }
+}
